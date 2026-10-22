@@ -1,5 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
   const cards = [...document.querySelectorAll('.service-card')];
+  const hero = document.querySelector('.services-hero');
+  if (hero && window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let raf = 0;
+    hero.addEventListener('pointermove', event => {
+      if (raf) return;
+      const rect = hero.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width - .5) * 22;
+      const y = ((event.clientY - rect.top) / rect.height - .5) * 18;
+      raf = requestAnimationFrame(() => {
+        hero.style.setProperty('--orbit-x', x.toFixed(1) + 'px');
+        hero.style.setProperty('--orbit-y', y.toFixed(1) + 'px');
+        raf = 0;
+      });
+    }, { passive: true });
+    hero.addEventListener('pointerleave', () => {
+      hero.style.setProperty('--orbit-x', '0px');
+      hero.style.setProperty('--orbit-y', '0px');
+    });
+  }
   if (!cards.length) return;
 
   const modal = document.createElement('div');
