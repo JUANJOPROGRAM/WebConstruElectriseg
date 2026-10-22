@@ -863,55 +863,36 @@ body {
 }
 
 
-/* Hero Inicio: núcleo fuertemente desenfocado y transición sin bordes visibles. */
+/* Hero Inicio: desenfoque real en el propio contenedor (sin pseudo-elementos). */
 .hero .hero-slogan-card {
     position: relative;
-    isolation: isolate;
-    overflow: visible;
+    isolation: auto;
+    overflow: hidden;
+    width: min(750px, calc(100% - 24px));
     max-width: 750px;
     margin: 0 auto 30px;
-    padding: 33px 36px;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
+    padding: 30px 34px;
+    border-radius: 68px;
+    border: 1px solid rgba(255,255,255,.23);
+    background: rgba(33, 39, 46, .32);
+    -webkit-backdrop-filter: blur(44px) saturate(1.25);
+    backdrop-filter: blur(44px) saturate(1.25);
+    box-shadow: 0 12px 30px rgba(0,0,0,.12), inset 0 1px 0 rgba(255,255,255,.15);
 }
-/* Halo exterior: blur medio y disipación hacia el fondo original. */
-.hero .hero-slogan-card::before {
-    content: "";
-    position: absolute;
-    inset: -32px -44px;
-    z-index: 0;
-    pointer-events: none;
-    background: rgba(12, 18, 24, .07);
-    -webkit-backdrop-filter: blur(28px);
-    backdrop-filter: blur(28px);
-    -webkit-mask-image: radial-gradient(ellipse 72% 84% at 50% 50%, #000 32%, rgba(0,0,0,.88) 51%, rgba(0,0,0,.48) 70%, transparent 100%);
-    mask-image: radial-gradient(ellipse 72% 84% at 50% 50%, #000 32%, rgba(0,0,0,.88) 51%, rgba(0,0,0,.48) 70%, transparent 100%);
-}
-/* Núcleo: la imagen detrás de todo el texto queda intencionalmente irreconocible. */
-.hero .hero-slogan-card::after {
-    content: "";
-    position: absolute;
-    inset: -13px -23px;
-    z-index: 0;
-    pointer-events: none;
-    background: rgba(21, 24, 29, .18);
-    -webkit-backdrop-filter: blur(65px) saturate(.9);
-    backdrop-filter: blur(65px) saturate(.9);
-    -webkit-mask-image: radial-gradient(ellipse 74% 88% at 50% 50%, #000 48%, rgba(0,0,0,.94) 61%, rgba(0,0,0,.5) 78%, transparent 100%);
-    mask-image: radial-gradient(ellipse 74% 88% at 50% 50%, #000 48%, rgba(0,0,0,.94) 61%, rgba(0,0,0,.5) 78%, transparent 100%);
-}
+.hero .hero-slogan-card::before,
+.hero .hero-slogan-card::after { content: none; }
 .hero .hero-slogan-card .slogan {
     position: relative;
     z-index: 1;
     color: #fff;
-    text-shadow: 0 2px 12px rgba(0,0,0,.48);
+    text-shadow: 0 2px 7px rgba(0,0,0,.45);
 }
-@media(max-width:768px) {
-    .hero .hero-slogan-card {padding:27px 20px}
-    .hero .hero-slogan-card::before {inset:-20px -12px;-webkit-backdrop-filter:blur(23px);backdrop-filter:blur(23px)}
-    .hero .hero-slogan-card::after {inset:-8px -6px;-webkit-backdrop-filter:blur(48px);backdrop-filter:blur(48px)}
+@media (max-width:768px) {
+    .hero .hero-slogan-card {
+        width: calc(100% - 20px);
+        padding: 24px 21px;
+        border-radius: 38px;
+        -webkit-backdrop-filter: blur(30px) saturate(1.2);
+        backdrop-filter: blur(30px) saturate(1.2);
+    }
 }
