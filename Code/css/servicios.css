@@ -403,47 +403,24 @@
   .services-grid > .service-card:last-child{width:100%;grid-column:auto}
 }
 
-/* PRUEBA REVERSIBLE: acentos rojos en Servicios; Inicio conserva su paleta. */
-body.services-red-preview {--accent-color:#cf2332}
-.services-red-preview .services-hero h1 span,
-.services-red-preview .services-dot,
-.services-red-preview .services-kicker,
-.services-red-preview .services-eyebrow,
-.services-red-preview .service-content li::marker,
-.services-red-preview .services-grid .service-content li::marker,
-.services-red-preview .service-link,
-.services-red-preview .service-card:hover .service-card__hint,
-.services-red-preview .service-modal__eyebrow {color:#cf2332}
-.services-red-preview .services-hero-actions .btn-primary,
-.services-red-preview .service-modal__quote {background:#cf2332;color:#fff;box-shadow:0 12px 30px rgba(207,35,50,.19)}
-.services-red-preview .services-hero-actions .btn-primary:hover,
-.services-red-preview .service-modal__quote:hover {background:#aa1726}
-.services-red-preview .cta-section .cta-card {background:linear-gradient(125deg,#260c12,#67202a 78%,#ad2736)}
-.services-red-preview .cta-section .cta-card .btn-primary {background:#fff;color:#ae2432}
-.services-red-preview .service-modal__thumb.is-active {border-color:#cf2332}
-.services-red-preview .service-modal__features li::before {color:#b51e2c;background:#fde9ec}
-.services-red-preview .service-card:focus-visible {outline-color:#cf2332}
-.services-red-preview .services-grid .service-link {border-bottom-color:rgba(207,35,50,.3)}
-.services-red-preview .services-hero-actions .services-quiet-link:hover {color:#cf2332}
-.services-red-preview .services-hero::before,
-.services-red-preview .services-hero::after {border-color:rgba(207,35,50,.18)}
-/* La última tarjeta llena casi el ancho del catálogo, sin afectar otras cards. */
+
+/* Tarjeta solitaria: ancho aproximado del trazo de referencia (65% del catálogo). */
 @media(min-width:1051px){
-  .services-grid > .service-card:last-child:nth-child(3n + 1){
-    grid-column:1 / -1;
-    width:92%;
-    max-width:none;
-    justify-self:center;
-  }
+ .services-grid > .service-card:last-child:nth-child(3n + 1){
+   grid-column:1 / -1;
+   width:65%;
+   max-width:none;
+   justify-self:center;
+ }
 }
 @media(min-width:769px) and (max-width:1050px){
-  .services-grid > .service-card:last-child:nth-child(odd){
-    grid-column:1 / -1;
-    width:92%;
-    max-width:none;
-    justify-self:center;
-  }
+ .services-grid > .service-card:last-child:nth-child(odd){
+   grid-column:1 / -1;
+   width:75%;
+   max-width:none;
+   justify-self:center;
+ }
 }
 @media(max-width:768px){
-  .services-grid > .service-card:last-child{width:100%;grid-column:auto}
+ .services-grid > .service-card:last-child{width:100%;grid-column:auto}
 }
