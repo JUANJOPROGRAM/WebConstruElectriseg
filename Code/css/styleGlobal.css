@@ -833,3 +833,31 @@ body {
 @media(prefers-reduced-motion:reduce) {
   .services-hero::before,.services-hero::after {animation:none!important;transition:none!important}
 }
+
+
+/* Corrección de nitidez del modal en pantallas táctiles.
+   No aplicar filter ni escalado al contenedor que contiene texto:
+   ambos pueden provocar rasterización borrosa en navegadores móviles. */
+.service-modal__dialog { filter:none; will-change:auto; }
+.service-modal.is-open .service-modal__dialog { filter:none; }
+.service-modal.is-closing .service-modal__dialog { filter:none; }
+@media (max-width:760px) {
+  .service-modal__dialog {
+    transform:translate3d(0,22px,0);
+    filter:none;
+    transition:opacity .24s ease,transform .38s cubic-bezier(.2,.9,.2,1);
+  }
+  .service-modal.is-open .service-modal__dialog {
+    transform:none;
+    opacity:1;
+    filter:none;
+  }
+  .service-modal.is-closing .service-modal__dialog {
+    transform:translate3d(0,12px,0);
+    opacity:0;
+    filter:none;
+    transition-duration:.22s;
+  }
+  .service-modal.is-open .service-modal__details {animation:none}
+  .service-modal__photo {filter:none}
+}
