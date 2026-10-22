@@ -778,3 +778,23 @@ body {
 @media(max-width:900px){.services-grid>.service-card:first-child{grid-template-columns:1fr}.services-grid>.service-card:first-child .service-img-wrapper{height:340px;min-height:0;border-radius:25px 25px 0 0}}
 @media(max-width:768px){.services-hero{padding-top:50px}.services-hero .container{padding:55px 20px}.services-section{padding:48px 20px}.services-section-heading{display:block}.services-section-heading>p{margin-top:16px}.services-grid{grid-template-columns:1fr;gap:24px}.services-grid>.service-card:first-child{grid-column:auto}.services-grid>.service-card:not(:first-child) .service-img-wrapper{height:260px}.services-grid .service-content{padding:25px}.services-hero::before{opacity:.5}.services-hero-actions{gap:18px}.services-section-heading h2{font-size:2rem}}
 @media(prefers-reduced-motion:reduce){.service-modal,.service-modal__backdrop,.service-modal__dialog,.services-grid>.service-card,.services-grid .carousel-slide img{animation:none!important;transition:none!important;filter:none!important}.service-modal.is-open .service-modal__dialog{opacity:1;transform:none}.service-modal.is-open .service-modal__details{animation:none}}
+
+/* Equilibrio visual: los tres servicios tienen idéntica jerarquía. */
+.services-grid {grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
+.services-grid>.service-card:first-child {grid-column:auto;display:flex;flex-direction:column;min-height:0}
+.services-grid>.service-card:first-child .service-img-wrapper,
+.services-grid>.service-card:not(:first-child) .service-img-wrapper {height:255px;min-height:0;border-radius:25px 25px 0 0}
+.services-grid>.service-card .service-content {padding:27px}
+.services-grid>.service-card .service-content h3 {font-size:clamp(1.24rem,1.7vw,1.55rem)}
+.services-grid>.service-card .service-content ul {font-size:.9rem;line-height:1.55}
+.services-grid>.service-card .service-content li {margin-bottom:6px}
+.services-grid>.service-card .service-card__hint {margin-top:auto;padding-top:14px}
+.services-grid>.service-card .service-link {margin-top:0}
+.services-hero {--orbit-x:0px;--orbit-y:0px}
+.services-hero::before {animation:serviceOrbit 22s ease-in-out infinite alternate;transform:translate3d(var(--orbit-x),var(--orbit-y),0);transition:transform .65s cubic-bezier(.18,.8,.2,1);will-change:transform}
+.services-hero::after {content:'';position:absolute;right:4%;top:4%;width:clamp(160px,24vw,335px);aspect-ratio:1;border:1px solid rgba(0,102,204,.10);border-radius:50%;pointer-events:none;z-index:-1;animation:serviceRing 13s ease-in-out infinite alternate}
+@keyframes serviceOrbit {from{box-shadow:0 0 0 65px rgba(0,102,204,.025),0 0 0 135px rgba(0,102,204,.014);opacity:.65}to{box-shadow:0 0 0 96px rgba(0,102,204,.038),0 0 0 183px rgba(0,102,204,.02);opacity:1}}
+@keyframes serviceRing {from{transform:scale(.96);opacity:.35}to{transform:scale(1.08);opacity:.85}}
+@media(max-width:1050px){.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.services-grid>.service-card:first-child{grid-column:auto}.services-grid>.service-card:last-child{grid-column:1/-1;max-width:calc(50% - 12px);width:100%;justify-self:center}}
+@media(max-width:768px){.services-grid{grid-template-columns:1fr;gap:24px}.services-grid>.service-card:last-child{grid-column:auto;max-width:none}.services-grid>.service-card:first-child .service-img-wrapper,.services-grid>.service-card:not(:first-child) .service-img-wrapper{height:260px}}
+@media(prefers-reduced-motion:reduce){.services-hero::before,.services-hero::after{animation:none!important;transition:none!important;will-change:auto}}
