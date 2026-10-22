@@ -878,3 +878,9 @@ body {
 .hero-liquid-glass {border-radius:28px;filter:drop-shadow(0 18px 27px rgba(0,0,0,.22));}
 .hero-liquid-glass .slogan {text-shadow:0 2px 12px rgba(0,0,0,.57)}
 @media(max-width:768px){.hero-liquid-glass{filter:none}}
+
+/* Capa de desenfoque garantizada detrás del Web Component.
+   El filtro experimental de desplazamiento queda gestionado por glass-element.js original. */
+.hero-liquid-glass {position:relative;isolation:isolate;border-radius:32px;max-width:750px;--glass-padding:28px 32px;filter:none}
+.hero-liquid-glass::before {content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.025) 58%,rgba(255,255,255,.12));-webkit-backdrop-filter:blur(16px) saturate(1.25);backdrop-filter:blur(16px) saturate(1.25);box-shadow:inset 0 1px 1px rgba(255,255,255,.38),0 16px 40px rgba(0,0,0,.15);pointer-events:none}
+@media(max-width:768px){.hero-liquid-glass{--glass-padding:20px 18px}}
