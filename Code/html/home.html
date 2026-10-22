@@ -38,8 +38,14 @@
             <div class="hero-content">
                 <h1><strong>CONSTRU<span class="text-red">ELECTRISEG</span></strong></h1>
                 
-                <section class="hero-slogan-card">
-                    <p class="slogan"><strong>Servicios electromecánicos industriales. Telecomunicaciones y diseño de ingeniería. Electricidad de edificaciones - Servicios Generales.</strong></p> 
+                <glass-element class="hero-liquid-glass"
+                    auto-size radius="26" depth="5" blur="2" strength="24"
+                    chromatic-aberration="1" background-color="rgba(255,255,255,0.17)"
+                    aria-label="Especialidades de ConstruElectriseg">
+                    <p class="slogan"><strong>Servicios electromecánicos industriales. Telecomunicaciones y diseño de ingeniería. Electricidad de edificaciones - Servicios Generales.</strong></p>
+                </glass-element>
+                <section class="hero-slogan-card hero-slogan-fallback">
+                    <p class="slogan"><strong>Servicios electromecánicos industriales. Telecomunicaciones y diseño de ingeniería. Electricidad de edificaciones - Servicios Generales.</strong></p>
                 </section>
 
                 <div class="hero-buttons">
@@ -155,6 +161,8 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     
+    <script src="../js/displacement-utils.js"></script>
+    <script src="../js/glass-element.js"></script>
     <script src="../js/navbar.js"></script>
     <script src="../js/wspbtn.js"></script>
     <script src="../js/contacto.js"></script>
