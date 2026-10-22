@@ -726,3 +726,55 @@ body {
 @media (prefers-reduced-motion:reduce) {
  .service-img-wrapper .carousel-track { transition:none; }
 }
+
+
+/* Servicios editorial: carácter industrial, claridad y movimiento contenido */
+.services-hero { position:relative; isolation:isolate; overflow:hidden; padding:80px 0 40px; background:radial-gradient(ellipse at 85% 15%,rgba(27,124,219,.13),transparent 42%),linear-gradient(135deg,#f7fbff 0%,#ffffff 58%,#f4f7fb 100%); }
+.services-hero::before {content:'';position:absolute;right:-100px;top:25px;width:460px;height:460px;border:1px solid rgba(0,102,204,.12);border-radius:50%;box-shadow:0 0 0 80px rgba(0,102,204,.025),0 0 0 160px rgba(0,102,204,.018);pointer-events:none;z-index:-1}
+.services-hero .container {padding:55px 20px 75px}
+.services-kicker,.services-eyebrow{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.18em;color:#0766bc}
+.services-hero h1{font-size:clamp(2.6rem,6vw,5.2rem);line-height:1.08;max-width:880px;margin:20px auto 24px;font-weight:800;letter-spacing:-.055em}
+.services-hero h1 span{color:#0066cc}
+.services-hero .subtitle{font-size:clamp(1rem,1.6vw,1.19rem);line-height:1.75;color:#5f6977;max-width:700px;margin:0 auto}
+.services-hero-actions{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:24px;margin-top:35px}
+.services-hero-actions .btn-primary{box-shadow:0 12px 30px rgba(0,102,204,.22)}
+.services-quiet-link{color:#27374a;text-decoration:none;font-weight:650;transition:color .2s}
+.services-quiet-link:hover{color:#0066cc}
+.services-section{padding-top:70px;padding-bottom:50px;scroll-margin-top:70px}
+.services-section-heading{display:flex;justify-content:space-between;gap:35px;align-items:end;margin-bottom:40px}
+.services-section-heading h2{font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.15;letter-spacing:-.045em;margin-top:12px;max-width:630px}
+.services-section-heading>p{max-width:340px;color:#6b7785;line-height:1.7}
+.services-dot{color:#0066cc}
+.services-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:stretch}
+.services-grid>.service-card{min-width:0;height:100%;margin-bottom:0;border:1px solid #e7ecf2;background:#fff;box-shadow:0 12px 35px rgba(22,43,68,.06);border-radius:26px;transform-origin:center center;transition:transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .45s,border-color .45s}
+.services-grid>.service-card.visible:hover{transform:translateY(-7px);box-shadow:0 24px 55px rgba(22,43,68,.13);border-color:#c9dbed}
+.services-grid>.service-card:first-child{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr;min-height:390px}
+.services-grid>.service-card:first-child .service-img-wrapper{height:100%;min-height:390px;border-radius:25px 0 0 25px}
+.services-grid>.service-card:not(:first-child) .service-img-wrapper{height:290px}
+.services-grid .service-img-wrapper{border-radius:25px 25px 0 0}
+.services-grid .service-content{padding:clamp(24px,3.2vw,38px)}
+.services-grid .service-content h3{font-size:clamp(1.35rem,2.1vw,1.8rem);line-height:1.25;letter-spacing:-.03em}
+.services-grid .service-content ul{font-size:.94rem;color:#68727e}
+.services-grid .service-content li::marker{color:#0066cc}
+.service-image-label{position:absolute;top:18px;left:18px;z-index:5;border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:8px 13px;background:rgba(12,22,33,.62);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff;font-weight:750;letter-spacing:.09em;font-size:.62rem;pointer-events:none}
+.services-grid .service-link{width:fit-content;border-bottom:1px solid rgba(0,102,204,.25);padding-bottom:4px}
+.services-grid .service-card .carousel-slide img{transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.services-grid .service-card:hover .carousel-slide img{transform:scale(1.025)}
+.cta-section .cta-card{border-radius:30px;background:linear-gradient(125deg,#071a30,#123b66 78%,#096db8);color:#fff;border:1px solid rgba(255,255,255,.12);box-shadow:0 25px 55px rgba(9,38,71,.18)}
+.cta-section .cta-card h2{color:#fff}
+.cta-section .cta-card p{color:#c7d9ec}
+.cta-section .cta-card .btn-primary{background:#fff;color:#07589e}
+.cta-section .cta-card .btn-primary:hover{background:#edf5ff}
+.service-modal{opacity:0;visibility:hidden;transition:opacity .28s ease,visibility .28s}
+.service-modal.is-open{opacity:1;visibility:visible}
+.service-modal.is-closing{opacity:0;visibility:visible}
+.service-modal__backdrop{opacity:0;transition:opacity .38s ease}
+.service-modal.is-open .service-modal__backdrop{opacity:1}
+.service-modal__dialog{opacity:0;transform:translateY(42px) scale(.88) perspective(900px) rotateX(5deg);transform-origin:50% 75%;filter:blur(4px);transition:transform .56s cubic-bezier(.18,1.2,.3,1),opacity .36s ease,filter .45s ease;will-change:transform,opacity}
+.service-modal.is-open .service-modal__dialog{opacity:1;transform:translateY(0) scale(1) perspective(900px) rotateX(0);filter:blur(0)}
+.service-modal.is-closing .service-modal__dialog{opacity:0;transform:translateY(15px) scale(.96);filter:blur(1px);transition-duration:.25s}
+.service-modal.is-open .service-modal__details{animation:serviceDetailsIn .62s .08s both}
+@keyframes serviceDetailsIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.services-grid>.service-card:first-child{grid-template-columns:1fr}.services-grid>.service-card:first-child .service-img-wrapper{height:340px;min-height:0;border-radius:25px 25px 0 0}}
+@media(max-width:768px){.services-hero{padding-top:50px}.services-hero .container{padding:55px 20px}.services-section{padding:48px 20px}.services-section-heading{display:block}.services-section-heading>p{margin-top:16px}.services-grid{grid-template-columns:1fr;gap:24px}.services-grid>.service-card:first-child{grid-column:auto}.services-grid>.service-card:not(:first-child) .service-img-wrapper{height:260px}.services-grid .service-content{padding:25px}.services-hero::before{opacity:.5}.services-hero-actions{gap:18px}.services-section-heading h2{font-size:2rem}}
+@media(prefers-reduced-motion:reduce){.service-modal,.service-modal__backdrop,.service-modal__dialog,.services-grid>.service-card,.services-grid .carousel-slide img{animation:none!important;transition:none!important;filter:none!important}.service-modal.is-open .service-modal__dialog{opacity:1;transform:none}.service-modal.is-open .service-modal__details{animation:none}}
