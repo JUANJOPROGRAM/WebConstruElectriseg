@@ -873,3 +873,8 @@ body {
   .hero-liquid-glass .slogan {font-size:clamp(.82rem,3.4vw,1rem);line-height:1.55}
 }
 @media(prefers-reduced-motion:reduce){.hero-liquid-glass{filter:none}}
+
+/* Realce visual de la superficie refractiva: el componente contiene sus reflejos internos. */
+.hero-liquid-glass {border-radius:28px;filter:drop-shadow(0 18px 27px rgba(0,0,0,.22));}
+.hero-liquid-glass .slogan {text-shadow:0 2px 12px rgba(0,0,0,.57)}
+@media(max-width:768px){.hero-liquid-glass{filter:none}}
