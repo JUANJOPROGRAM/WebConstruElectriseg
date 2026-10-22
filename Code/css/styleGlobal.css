@@ -861,3 +861,15 @@ body {
   .service-modal.is-open .service-modal__details {animation:none}
   .service-modal__photo {filter:none}
 }
+
+/* Liquid Glass, únicamente en la descripción del hero de Inicio. */
+.hero-liquid-glass {display:block;max-width:750px;width:100%;margin:0 auto 30px;--glass-padding:28px 34px;filter:drop-shadow(0 12px 26px rgba(0,0,0,.18))}
+.hero-liquid-glass:not(:defined) {display:none}
+.hero-liquid-glass:defined + .hero-slogan-fallback {display:none}
+.hero-liquid-glass .slogan {max-width:690px;margin:0 auto;font-size:clamp(.9rem,1.65vw,1.18rem);line-height:1.65;letter-spacing:.035em;text-wrap:balance;text-shadow:0 1px 12px rgba(0,0,0,.32)}
+.hero-slogan-fallback {max-width:750px}
+@media(max-width:768px){
+  .hero-liquid-glass {max-width:100%;--glass-padding:20px 18px;filter:none}
+  .hero-liquid-glass .slogan {font-size:clamp(.82rem,3.4vw,1rem);line-height:1.55}
+}
+@media(prefers-reduced-motion:reduce){.hero-liquid-glass{filter:none}}
