@@ -292,9 +292,10 @@ class GlassElement extends HTMLElement {
                 element.style.backdropFilter = "none";
             } else if (!this.hasSVGFilterSupport) {
                 // Fallback para navegadores sin soporte
-                element.style.backdropFilter = `blur(${this.blur * 2}px)`;
+                element.style.backdropFilter = `blur(${Math.max(this.blur * 2, 10)}px) saturate(1.5) brightness(1.08)`;
+                element.style.webkitBackdropFilter = element.style.backdropFilter;
                 element.style.background = this.backgroundColor;
-                element.style.boxShadow = '1px 1px 1px 0px rgba(255,255,255, 0.60) inset, -1px -1px 1px 0px rgba(255,255,255, 0.60) inset, 0px 0px 16px 0px rgba(0,0,0, 0.04)';
+                element.style.boxShadow = '0 20px 45px rgba(0,0,0,.22), inset 0 1px 2px rgba(255,255,255,.65), inset 0 -1px 2px rgba(255,255,255,.32)';
                 element.style.border = '1px solid rgba(255, 255, 255, 0.3)';
             } else {
                 // Efecto completo con SVG filters
@@ -306,6 +307,7 @@ class GlassElement extends HTMLElement {
                     strength: this.strength,
                     chromaticAberration: this.chromaticAberration
                 })}') blur(${this.blur}px) brightness(1.1) saturate(1.5)`;
+                element.style.webkitBackdropFilter = element.style.backdropFilter;
                 element.style.background = this.backgroundColor;
                 element.style.boxShadow = '1px 1px 1px 0px rgba(255,255,255, 0.60) inset, -1px -1px 1px 0px rgba(255,255,255, 0.60) inset, 0px 0px 16px 0px rgba(0,0,0, 0.04)';
             }
@@ -325,7 +327,8 @@ class GlassElement extends HTMLElement {
                 element.style.backdropFilter = "none";
             } else if (!this.hasSVGFilterSupport) {
                 // Fallback para navegadores sin soporte
-                element.style.backdropFilter = `blur(${this.blur * 2}px)`;
+                element.style.backdropFilter = `blur(${Math.max(this.blur * 2, 10)}px) saturate(1.5) brightness(1.08)`;
+                element.style.webkitBackdropFilter = element.style.backdropFilter;
                 element.style.background = this.backgroundColor;
                 element.style.boxShadow = '1px 1px 1px 0px rgba(255,255,255, 0.60) inset, -1px -1px 1px 0px rgba(255,255,255, 0.60) inset, 0px 0px 16px 0px rgba(0,0,0, 0.04)';
                 element.style.border = '1px solid rgba(255, 255, 255, 0.3)';
@@ -339,6 +342,7 @@ class GlassElement extends HTMLElement {
                     strength: this.strength,
                     chromaticAberration: this.chromaticAberration
                 })}') blur(${this.blur}px) brightness(1.1) saturate(1.5)`;
+                element.style.webkitBackdropFilter = element.style.backdropFilter;
                 element.style.background = this.backgroundColor;
                 element.style.boxShadow = '1px 1px 1px 0px rgba(255,255,255, 0.60) inset, -1px -1px 1px 0px rgba(255,255,255, 0.60) inset, 0px 0px 16px 0px rgba(0,0,0, 0.04)';
             }
@@ -353,16 +357,37 @@ class GlassElement extends HTMLElement {
                 }
                 
                 .glass-box {
+                    isolation: isolate;
+                    overflow: hidden;
                     background: rgba(255, 255, 255, 0.4);
                     box-shadow: 1px 1px 1px 0px rgba(255,255,255, 0.60) inset, -1px -1px 1px 0px rgba(255,255,255, 0.60) inset, 0px 0px 16px 0px rgba(0,0,0, 0.04);
-                    cursor: pointer;
-                    transition: transform 0.1s ease;
+                    cursor: default;
+                    transition: transform 0.28s ease, box-shadow 0.28s ease;
                     position: relative;
                     ${this.autoSize ? `display: inline-block; width: fit-content; min-width: ${this.minWidth}px; min-height: ${this.minHeight}px;` : ''}
                 }
                 
-                .glass-box:active {
-                    transform: scale(0.98);
+                .glass-box::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    border-radius: inherit;
+                    z-index: 0;
+                    pointer-events: none;
+                    background: linear-gradient(155deg, rgba(255,255,255,.31),rgba(255,255,255,.035) 34%,rgba(255,255,255,.015) 67%,rgba(255,255,255,.19));
+                    box-shadow: inset 1px 2px 2px rgba(255,255,255,.62), inset -2px -3px 4px rgba(255,255,255,.20), inset 0 0 0 1px rgba(255,255,255,.3);
+                }
+                .glass-box::after {
+                    content: '';
+                    position: absolute;
+                    inset: 2px;
+                    border-radius: inherit;
+                    border: 1px solid rgba(255,255,255,.13);
+                    pointer-events: none;
+                }
+                .content {position:relative;z-index:1}
+                @media (hover:hover) and (prefers-reduced-motion:no-preference) {
+                    .glass-box:hover {transform: translateY(-2px);}
                 }
 
                 .content {
