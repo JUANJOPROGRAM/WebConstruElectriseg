@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let activeImages = [];
   let currentImage = 0;
   let previousFocus = null;
+  let closeTimeout = null;
 
   function renderImage() {
     if (!activeImages.length) return;
@@ -60,15 +61,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function closeModal() {
-    if (modal.getAttribute('aria-hidden') === 'true') return;
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('service-modal-open');
-    photo.removeAttribute('src');
-    blur.style.backgroundImage = '';
-    if (previousFocus && previousFocus.isConnected) previousFocus.focus();
+    if (modal.getAttribute('aria-hidden') === 'true' || modal.classList.contains('is-closing')) return;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    modal.classList.add('is-closing');
+    const finish = () => {
+      modal.setAttribute('aria-hidden', 'true');
+      modal.classList.remove('is-open', 'is-closing');
+      document.body.classList.remove('service-modal-open');
+      photo.removeAttribute('src');
+      blur.style.backgroundImage = '';
+      if (previousFocus && previousFocus.isConnected) previousFocus.focus();
+      closeTimeout = null;
+    };
+    if (reducedMotion) finish();
+    else closeTimeout = window.setTimeout(finish, 270);
   }
 
   function openModal(card) {
+    if (closeTimeout !== null) { clearTimeout(closeTimeout); closeTimeout = null; }
+    modal.classList.remove('is-open', 'is-closing');
     previousFocus = document.activeElement;
     activeImages = [...card.querySelectorAll('.carousel-slide img')].map(image => ({
       src: image.currentSrc || image.src, alt: image.alt || 'Fotografía del servicio'
@@ -104,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('service-modal-open');
     dialog.focus();
+    requestAnimationFrame(() => modal.classList.add('is-open'));
   }
 
   modal.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', closeModal));
@@ -143,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
       index = 0; track.style.transform = 'translateX(0)';
     };
     card.addEventListener('mouseenter', () => {
-      if (window.matchMedia('(hover: hover)').matches && slides.length > 1 && !timer) timer = setInterval(move, 2800);
+      if (window.matchMedia('(hover: hover)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && slides.length > 1 && !timer) timer = setInterval(move, 2800);
     });
     card.addEventListener('mouseleave', stop);
     card.addEventListener('focusout', event => { if (!card.contains(event.relatedTarget)) stop(); });
