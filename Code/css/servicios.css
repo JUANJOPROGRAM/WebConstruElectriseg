@@ -340,3 +340,13 @@
 
 
 
+
+/* Catálogo ampliable: todas las cards pertenecen al mismo grid. */
+.services-grid > .service-card {min-width:0;margin:0;height:100%}
+.service-card--template {border:1px dashed #b9ccde!important;background:#f9fbfd!important;box-shadow:none!important;cursor:default!important}
+.service-card--template .service-template-image{display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#e8eef5,#f5f8fc)}
+.service-template-placeholder{display:flex;flex-direction:column;align-items:center;gap:10px;font-size:2rem;color:#7091af}
+.service-template-placeholder span{font-size:.9rem;font-weight:600}
+.service-template-tag{color:#53789a;font-weight:800;letter-spacing:.12em;font-size:.72rem;margin-bottom:12px}
+.service-card--template .service-card__hint{margin-top:auto;color:#788b9f}
+@media(min-width:769px) and (max-width:1050px){.services-grid>.service-card:last-child{grid-column:auto;max-width:none;justify-self:stretch}}

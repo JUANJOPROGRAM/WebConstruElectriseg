@@ -10,7 +10,7 @@
     justify-content: center;
     text-align: center;
     padding: 80px 20px 0 20px; 
-    background-image: url('../../Resource/images/hero.jpeg');
+    background-image: url('../../Resource/images/inicio/hero.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -139,7 +139,7 @@
 .hero {isolation:isolate;overflow:hidden}
 .hero-focus-blur {
   position:absolute;inset:0;z-index:1;pointer-events:none;
-  background-image:url('../../Resource/images/hero.jpeg');
+  background-image:url('../../Resource/images/inicio/hero.jpeg');
   background-size:cover;background-position:center;background-attachment:fixed;
   filter:blur(38px) brightness(.74);
   -webkit-mask-image:radial-gradient(ellipse var(--blur-rx, 410px) var(--blur-ry, 155px) at var(--blur-x, 50%) var(--blur-y, 50%),black 45%,rgba(0,0,0,.94) 58%,rgba(0,0,0,.55) 77%,transparent 100%);
