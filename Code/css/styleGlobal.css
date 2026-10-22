@@ -863,40 +863,55 @@ body {
 }
 
 
-/* Hero Inicio: vidrio difuminado con desenfoque que desaparece en los bordes. */
+/* Hero Inicio: núcleo fuertemente desenfocado y transición sin bordes visibles. */
 .hero .hero-slogan-card {
     position: relative;
     isolation: isolate;
-    overflow: hidden;
+    overflow: visible;
     max-width: 750px;
     margin: 0 auto 30px;
-    padding: 28px 34px;
+    padding: 33px 36px;
     border: 0;
-    border-radius: 26px;
+    border-radius: 0;
     background: transparent;
+    box-shadow: none;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
-    box-shadow: none;
 }
+/* Halo exterior: blur medio y disipación hacia el fondo original. */
 .hero .hero-slogan-card::before {
     content: "";
     position: absolute;
-    inset: 0;
-    z-index: -1;
-    border-radius: inherit;
-    background: rgba(255,255,255,.11);
-    -webkit-backdrop-filter: blur(24px) saturate(1.2);
-    backdrop-filter: blur(24px) saturate(1.2);
-    -webkit-mask-image: radial-gradient(ellipse 77% 92% at center, #000 38%, rgba(0,0,0,.88) 57%, rgba(0,0,0,.35) 82%, transparent 100%);
-    mask-image: radial-gradient(ellipse 77% 92% at center, #000 38%, rgba(0,0,0,.88) 57%, rgba(0,0,0,.35) 82%, transparent 100%);
+    inset: -32px -44px;
+    z-index: 0;
     pointer-events: none;
+    background: rgba(12, 18, 24, .07);
+    -webkit-backdrop-filter: blur(28px);
+    backdrop-filter: blur(28px);
+    -webkit-mask-image: radial-gradient(ellipse 72% 84% at 50% 50%, #000 32%, rgba(0,0,0,.88) 51%, rgba(0,0,0,.48) 70%, transparent 100%);
+    mask-image: radial-gradient(ellipse 72% 84% at 50% 50%, #000 32%, rgba(0,0,0,.88) 51%, rgba(0,0,0,.48) 70%, transparent 100%);
+}
+/* Núcleo: la imagen detrás de todo el texto queda intencionalmente irreconocible. */
+.hero .hero-slogan-card::after {
+    content: "";
+    position: absolute;
+    inset: -13px -23px;
+    z-index: 0;
+    pointer-events: none;
+    background: rgba(21, 24, 29, .18);
+    -webkit-backdrop-filter: blur(65px) saturate(.9);
+    backdrop-filter: blur(65px) saturate(.9);
+    -webkit-mask-image: radial-gradient(ellipse 74% 88% at 50% 50%, #000 48%, rgba(0,0,0,.94) 61%, rgba(0,0,0,.5) 78%, transparent 100%);
+    mask-image: radial-gradient(ellipse 74% 88% at 50% 50%, #000 48%, rgba(0,0,0,.94) 61%, rgba(0,0,0,.5) 78%, transparent 100%);
 }
 .hero .hero-slogan-card .slogan {
     position: relative;
     z-index: 1;
-    text-shadow: 0 2px 10px rgba(0,0,0,.38);
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0,0,0,.48);
 }
 @media(max-width:768px) {
-    .hero .hero-slogan-card { padding: 22px 19px; }
-    .hero .hero-slogan-card::before { -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px); }
+    .hero .hero-slogan-card {padding:27px 20px}
+    .hero .hero-slogan-card::before {inset:-20px -12px;-webkit-backdrop-filter:blur(23px);backdrop-filter:blur(23px)}
+    .hero .hero-slogan-card::after {inset:-8px -6px;-webkit-backdrop-filter:blur(48px);backdrop-filter:blur(48px)}
 }
