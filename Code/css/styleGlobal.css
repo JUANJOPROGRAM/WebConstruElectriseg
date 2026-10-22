@@ -862,25 +862,41 @@ body {
   .service-modal__photo {filter:none}
 }
 
-/* Liquid Glass, únicamente en la descripción del hero de Inicio. */
-.hero-liquid-glass {display:block;max-width:750px;width:100%;margin:0 auto 30px;--glass-padding:28px 34px;filter:drop-shadow(0 12px 26px rgba(0,0,0,.18))}
-.hero-liquid-glass:not(:defined) {display:none}
-.hero-liquid-glass:defined + .hero-slogan-fallback {display:none}
-.hero-liquid-glass .slogan {max-width:690px;margin:0 auto;font-size:clamp(.9rem,1.65vw,1.18rem);line-height:1.65;letter-spacing:.035em;text-wrap:balance;text-shadow:0 1px 12px rgba(0,0,0,.32)}
-.hero-slogan-fallback {max-width:750px}
-@media(max-width:768px){
-  .hero-liquid-glass {max-width:100%;--glass-padding:20px 18px;filter:none}
-  .hero-liquid-glass .slogan {font-size:clamp(.82rem,3.4vw,1rem);line-height:1.55}
+
+/* Hero Inicio: vidrio difuminado con desenfoque que desaparece en los bordes. */
+.hero .hero-slogan-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    max-width: 750px;
+    margin: 0 auto 30px;
+    padding: 28px 34px;
+    border: 0;
+    border-radius: 26px;
+    background: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: none;
 }
-@media(prefers-reduced-motion:reduce){.hero-liquid-glass{filter:none}}
-
-/* Realce visual de la superficie refractiva: el componente contiene sus reflejos internos. */
-.hero-liquid-glass {border-radius:28px;filter:drop-shadow(0 18px 27px rgba(0,0,0,.22));}
-.hero-liquid-glass .slogan {text-shadow:0 2px 12px rgba(0,0,0,.57)}
-@media(max-width:768px){.hero-liquid-glass{filter:none}}
-
-/* Capa de desenfoque garantizada detrás del Web Component.
-   El filtro experimental de desplazamiento queda gestionado por glass-element.js original. */
-.hero-liquid-glass {position:relative;isolation:isolate;border-radius:32px;max-width:750px;--glass-padding:28px 32px;filter:none}
-.hero-liquid-glass::before {content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.025) 58%,rgba(255,255,255,.12));-webkit-backdrop-filter:blur(16px) saturate(1.25);backdrop-filter:blur(16px) saturate(1.25);box-shadow:inset 0 1px 1px rgba(255,255,255,.38),0 16px 40px rgba(0,0,0,.15);pointer-events:none}
-@media(max-width:768px){.hero-liquid-glass{--glass-padding:20px 18px}}
+.hero .hero-slogan-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: rgba(255,255,255,.11);
+    -webkit-backdrop-filter: blur(24px) saturate(1.2);
+    backdrop-filter: blur(24px) saturate(1.2);
+    -webkit-mask-image: radial-gradient(ellipse 77% 92% at center, #000 38%, rgba(0,0,0,.88) 57%, rgba(0,0,0,.35) 82%, transparent 100%);
+    mask-image: radial-gradient(ellipse 77% 92% at center, #000 38%, rgba(0,0,0,.88) 57%, rgba(0,0,0,.35) 82%, transparent 100%);
+    pointer-events: none;
+}
+.hero .hero-slogan-card .slogan {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 10px rgba(0,0,0,.38);
+}
+@media(max-width:768px) {
+    .hero .hero-slogan-card { padding: 22px 19px; }
+    .hero .hero-slogan-card::before { -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px); }
+}
