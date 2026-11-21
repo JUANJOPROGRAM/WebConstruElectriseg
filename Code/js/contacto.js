@@ -9,6 +9,8 @@ function mostrarNotificacion(mensaje, tipo) {
     // 1. Creamos el elemento en el HTML
     const toast = document.createElement('div');
     toast.className = `toast-notification ${tipo}`;
+    toast.setAttribute('role', tipo === 'success' ? 'status' : 'alert');
+    toast.setAttribute('aria-atomic', 'true');
     
     // Agregamos un icono dependiendo del tipo y el mensaje
     const icono = tipo === 'success' ? '✅' : '❌';

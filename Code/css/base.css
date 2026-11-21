@@ -4,7 +4,7 @@
 :root {
     --bg-color: #fbfbfd;
     --text-main: #1d1d1f;
-    --text-muted: #86868b;
+    --text-muted: #707077;
     --accent-color: #0066cc;
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(255, 255, 255, 0.4);
@@ -216,7 +216,7 @@ body {
     bottom: 30px;
     right: 30px;
     background-color: #25d366;
-    color: white;
+    color: #0a3d1f;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -301,8 +301,8 @@ body {
     }
 
     .hero-content .slogan { 
-        font-size: 0.8rem; 
-        letter-spacing: 0.02em; 
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
     }
 
     .hero-buttons .btn-primary {
@@ -332,7 +332,6 @@ body {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform;
 }
 
 .fade-in-up.visible {
@@ -392,5 +391,12 @@ body {
     .toast-notification.show {
         transform: translateY(0);
     }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fade-in-up { opacity: 1; transform: none; transition: none; }
+    .hero-content { animation: none; }
+    .hero { background-attachment: scroll; }
 }
 

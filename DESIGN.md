@@ -1,74 +1,99 @@
 ---
 name: ConstruElectriseg
-description: Sistema visual web de ingeniería técnica con fotografía de proyectos, azul de acción y superficies claras.
+description: Presentación clara de especialidades, fotografías de trabajo y contacto.
 colors:
+  paper: "#f2f7fc"
+  surface: "#ffffff"
+  about-wash: "#2d2d2d"
+  about-ink: "#f4f4f4"
+  about-muted: "#c9c9c9"
+  nav-surface: "rgba(67,67,67,.92)"
+  ink: "#0c2035"
+  ink-soft: "#42566c"
+  muted: "#52667a"
   technical-blue: "#0066cc"
+  deep-blue: "#064785"
+  light-blue: "#dceeff"
   signal-red: "#ff0015"
-  blue-hover: "#005bb5"
+  brand-red: "#c90012"
+  red-light: "#ff7580"
   whatsapp-green: "#25d366"
-  light-canvas: "#fbfbfd"
-  ink: "#1d1d1f"
-  muted-ink: "#86868b"
-  paper-white: "#ffffff"
-  charcoal-surface: "#161617"
+  blur-light: "rgba(237,242,248,.82)"
+  blur-dark: "rgba(13,32,53,.78)"
+  form-bg: "#f7faff"
+  form-stroke: "#b8c9d8"
+  map-surface: "#dce8f1"
+  service-hero-base: "#092b4d"
+  service-hero-scrim: "rgba(5,25,47,.87)"
+  footer: "#0b223b"
 typography:
   display:
-    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-    fontSize: "4.5rem"
-    fontWeight: 800
-    letterSpacing: "-0.02em"
-  headline:
-    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-    fontSize: "clamp(2.6rem, 6vw, 5.2rem)"
-    fontWeight: 800
-    lineHeight: 1.08
-    letterSpacing: "-0.055em"
-  title:
-    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-    fontSize: "clamp(1.9rem, 3.6vw, 3rem)"
+    fontFamily: "Barlow, Arial, sans-serif"
+    fontSize: "clamp(3.5rem, 6.45vw, 6rem)"
     fontWeight: 700
-    lineHeight: 1.15
-    letterSpacing: "-0.045em"
+    lineHeight: 0.91
+    letterSpacing: "-0.035em"
+  headline:
+    fontFamily: "Barlow, Arial, sans-serif"
+    fontSize: "clamp(3.2rem, 6.6vw, 6rem)"
+    fontWeight: 700
+    lineHeight: 0.94
+    letterSpacing: "-0.035em"
+  title:
+    fontFamily: "Barlow, Arial, sans-serif"
+    fontSize: "clamp(2.35rem, 4.4vw, 4.35rem)"
+    fontWeight: 700
+    lineHeight: 0.99
+    letterSpacing: "-0.03em"
   body:
-    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-    fontSize: "1rem"
+    fontFamily: "Barlow, Arial, sans-serif"
+    fontSize: "17px"
     fontWeight: 400
-    lineHeight: 1.5
+    lineHeight: 1.55
   label:
-    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-    fontSize: "0.72rem"
-    fontWeight: 800
-    letterSpacing: "0.18em"
+    fontFamily: "Barlow, Arial, sans-serif"
+    fontSize: "0.95rem"
+    fontWeight: 700
 rounded:
-  sm: "10px"
-  control: "16px"
-  nav: "20px"
-  card: "24px"
-  card-large: "30px"
-  pill: "980px"
+  panel: "36px"
+  card: "28px"
+  control: "999px"
+  field: "18px"
+  field-message: "20px"
+  index: "30px"
+  small-card: "22px"
+  photo: "34px"
+  services-hero: "42px"
+  cta-card: "40px"
 spacing:
-  sm: "14px"
-  md: "20px"
+  page-gutter: "clamp(20px, 5vw, 76px)"
+  content-max: "1380px"
+  section: "clamp(78px, 10vw, 144px)"
+  sm: "16px"
+  md: "22px"
   lg: "40px"
-  section: "80px"
 components:
   button-primary:
     backgroundColor: "{colors.technical-blue}"
-    textColor: "{colors.paper-white}"
-    rounded: "{rounded.pill}"
-    padding: "14px 28px"
-  button-primary-hover:
-    backgroundColor: "{colors.blue-hover}"
-  button-contact:
-    backgroundColor: "{colors.paper-white}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.nav}"
-    padding: "8px 16px"
-  input-field:
-    backgroundColor: "rgba(255, 255, 255, 0.6)"
-    textColor: "{colors.ink}"
+    textColor: "{colors.surface}"
+    typography: "700 1rem/1.2 Barlow, Arial, sans-serif"
     rounded: "{rounded.control}"
-    padding: "15px 20px"
+    padding: "14px 23px"
+    height: "52px"
+  button-primary-hover:
+    backgroundColor: "{colors.deep-blue}"
+  button-contact:
+    backgroundColor: "{colors.technical-blue}"
+    textColor: "{colors.surface}"
+    rounded: "{rounded.control}"
+    padding: "11px 19px"
+    height: "44px"
+  input-field:
+    backgroundColor: "#f7faff"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.field}"
+    padding: "13px 16px"
+    height: "52px"
 ---
 
 # Design System: ConstruElectriseg
@@ -77,128 +102,137 @@ components:
 
 **Creative North Star: "Precisión en obra"**
 
-The visual system presents a technical, professional, contemporary engineering company. It pairs real project photography with clear service information, a light neutral content canvas, dark navigation, and blue action cues. The home hero uses a large project photograph with a dark overlay and a red wordmark accent. The services page uses a pale blue-white field, restrained geometric rings, and a practical catalogue of photographic cards.
+La presencia visual convierte Inicio en una presentación editorial de la oferta: un titular amplio comparte protagonismo con fotografías publicadas en una composición conectada. Servicios continúa el recorrido con una portada fotográfica y un índice que cambia una ficha activa con imágenes y detalles. La información publicada y la evidencia visual siguen siendo el contenido central.
 
-Depth stays restrained and atmospheric: translucent navigation and light card shadows create separation while keeping the work photographs and service copy prominent. Components should feel solid and technical, with readable labels and familiar actions. No visual anti-reference has been confirmed. Inter is the declared typeface; the home page imports it from Google Fonts, while the services page declares the same stack without loading that font itself, so it can fall back to a system sans-serif.
+La voz permanece técnica, profesional y contemporánea. Barlow, azules de marca y superficies claras mantienen el carácter reconocible; los radios amplios y el blurmorfismo aportan profundidad a la navegación y a los rótulos fotográficos. El rojo señal sigue identificando el nombre de marca. La frase «Precisión en obra» funciona como encuadre durable solo cuando acompaña esta presentación sin añadir una promesa comercial.
 
 **Key Characteristics:**
-- Technical blue identifies primary actions, links, and service accents.
-- Signal red is a focused accent in the home wordmark.
-- Project photography anchors the home hero and service catalogue.
-- Large, tightly tracked Inter headings pair with compact uppercase labels.
-- Soft blur and ambient shadows separate translucent or elevated layers.
-- Rounded pill actions sit alongside generously rounded cards and fields.
+- Azul técnico para acciones, enlaces e índice seleccionado; rojo para el nombre de marca.
+- Fotografías publicadas en superficies amplias, redondeadas y conectadas.
+- Barlow de titulares grandes con texto de lectura sobrio.
+- Blurmorfismo: la navegación flotante usa gris neutro translúcido y blur; el menú móvil usa un velo gris claro semitransparente y blur visible para mantener legibles las opciones mientras se reconoce el contenido posterior desenfocado.
+- El bloque grafito de «¿Quiénes somos?» hasta Visión da un peso visual continuo al propósito de la empresa.
+- El catálogo conserva las especialidades publicadas y señala las fichas de plantilla.
 
 ## Colors
 
-The palette centers on a saturated engineering blue, with a red wordmark accent, a WhatsApp green contact utility, and cool light and charcoal neutrals.
+La paleta conserva el azul técnico y el rojo señal de marca sobre papel azul pálido, superficies blancas y tinta azul carbón; un gris grafito neutro y sin matiz azul unifica «¿Quiénes somos?», Misión y Visión; el verde identifica WhatsApp.
 
 ### Primary
-- **Azul técnico** (#0066cc): Primary buttons, service links, form focus, and highlighted service headings.
+- **Azul técnico**: acciones principales, estado seleccionado del índice, foco visible y enlaces funcionales.
+- **Azul profundo**: interacción de botones y texto de enlace sobre superficies claras.
+- **Azul claro**: enlaces secundarios y superficies de apoyo.
 
 ### Secondary
-- **Rojo señal** (#ff0015): Emphasis within the home-page wordmark.
-- **Azul de interacción** (#005bb5): Darker hover state for the primary action.
+- **Rojo señal**: énfasis de la palabra ELECTRISEG en la marca; no compite con las acciones azules.
+- **Rojo de marca**: tono más oscuro aplicado al nombre sobre superficies claras.
+- **Rojo claro**: versión de la marca sobre fondos oscuros.
 
 ### Tertiary
-- **Verde WhatsApp** (#25d366): Floating WhatsApp contact action and its hover state.
+- **Verde WhatsApp**: acceso de contacto flotante.
 
 ### Neutral
-- **Lienzo casi blanco** (#fbfbfd): Default page background.
-- **Tinta carbón** (#1d1d1f): Main text on light surfaces.
-- **Tinta gris** (#86868b): Muted body copy and secondary information.
-- **Blanco papel** (#ffffff): Light cards, navigation contact action, and reversed text.
-- **Superficie carbón** (#161617): Footer, dark mission card, and translucent navigation base.
+- **Papel azul pálido**: fondo general y marco claro de la galería.
+- **Grafito neutro de propósito** (`#2d2d2d`): fondo compartido, rectangular y sin tinte azul, desde «¿Quiénes somos?» hasta el final de Visión; usa texto claro y gris neutro para el encabezado y su descripción.
+- **Gris humo de navegación** (`rgba(67,67,67,.92)`): superficie gris neutra de la navegación flotante, ligeramente más oscura que la referencia, con blur de fondo de 30px.
+- **Superficie blanca**: fichas e inputs.
+- **Tinta azul carbón**: encabezados y texto principal.
+- **Tinta suave**: descripciones y texto secundario.
+- **Tinta auxiliar**: textos de apoyo y placeholders.
+- **Blur claro** y **blur azul oscuro**: superficies translúcidas en la navegación, etiquetas y contadores; usar `backdrop-filter` de 24–30px con saturación discreta.
 
 ### Named Rules
-**The Blue for Action Rule.** Reserve blue for the primary action and technical links; keep the red accent concentrated in the wordmark as it is in the current home page.
+**The Blue Leads Rule.** Usa azul para orientar acciones y estados; deja el rojo para el nombre de marca y el verde para WhatsApp.
 
 ## Typography
 
-**Display Font:** Inter (with the system sans-serif stack as fallback)  
-**Body Font:** Inter (with the system sans-serif stack as fallback)  
-**Label/Mono Font:** Inter for compact uppercase section labels; no separate mono face is defined.
+**Display Font:** Barlow (with Arial, sans-serif fallback)
 
-**Character:** A geometric, contemporary sans-serif supports technical headings and straightforward service copy. Strong heading weights and tight tracking give the identity its most assertive typographic moments.
+**Body Font:** Barlow (with Arial, sans-serif fallback)
+
+**Character:** Barlow comunica precisión contemporánea con titulares compactos y pesados. El mismo rostro acompaña párrafos, índices y formularios para mantener unidad entre presentación y consulta.
 
 ### Hierarchy
-- **Display** (800, 4.5rem): Home-page wordmark heading on wide screens; it reduces to a fluid 1.2–2.5rem range on small screens.
-- **Headline** (800, clamp(2.6rem, 6vw, 5.2rem), 1.08 line-height): Services page hero heading.
-- **Title** (700, clamp(1.9rem, 3.6vw, 3rem), 1.15 line-height): Section headings on the services page. Other section headings use 2.5rem.
-- **Body** (400, 1rem, 1.5 line-height): General copy; longer service and explanatory paragraphs use about 1.6–1.75 line-height.
-- **Label** (800, 0.72rem, 0.18em tracking, uppercase): Small service and section eyebrows.
+- **Display** (700, fluido desde 3.5rem hasta 6rem, line-height .91): titular dominante de Inicio; se reduce y refluye en móvil.
+- **Headline** (700, fluido desde 3.2rem hasta 6rem, line-height .94): apertura fotográfica de Servicios.
+- **Title** (700, fluido desde 2.35rem hasta 4.35rem, line-height .99): encabezados de sección.
+- **Body** (400, 17px, line-height 1.55): lectura general; descripciones usan interlineado más amplio y ancho limitado.
+- **Label** (700, .95rem): etiquetas del formulario e índice de especialidades.
 
 ### Named Rules
-**The Evidence First Rule.** Use bold display type for the company and page headings; keep detailed service descriptions at body scale so they remain easy to scan.
+**The Evidence First Rule.** Mantén los titulares dominantes y la descripción a escala legible, vinculada al contenido y a las fotografías publicadas.
 
 ## Layout
 
-The home page uses a centered content container capped at 1200px with 20px horizontal insets and 80px vertical section padding. Its hero spans the viewport and is image-led. The services catalogue expands to a 1540px maximum with responsive side insets. Its grid uses three columns above 1050px, two columns from 769px through 1050px, and one column at 768px and below. At mobile widths, page sections reduce their vertical padding and the service cards retain a single-column reading order.
+El contenido usa márgenes laterales fluidos de 20px a 76px y un ancho de hasta 1380px; las secciones abren su espacio entre 78px y 144px. En Inicio, texto y acción preceden una composición de tres fotografías superpuestas en escritorio. El bloque grafito de propósito comienza en «¿Quiénes somos?» y termina después de Visión, con las tarjetas blancas destacadas sobre ese fondo oscuro. Hasta 1050px se estrecha el espacio; hasta 760px el texto queda encima de una galería horizontal con desplazamiento y ajuste por foto (`scroll-snap-type: x mandatory`). En anchos inferiores a 390px, la galería y etiquetas vuelven a compactarse.
 
-The underlying spacing rhythm repeats 14px, 20px, and 40px intervals, with 80px section spacing on wide screens. The first service card follows the same card hierarchy as the rest in the final CSS rules. The fixed navigation has a centered 1200px inner row; on narrow screens it becomes a full-screen dark menu.
+Servicios presenta una fotografía de portada redondeada, seguida por un registro de dos columnas: índice vertical y ficha activa. El índice queda fijo durante el recorrido en escritorio; hasta 1050px la ficha pasa a una columna, y hasta 760px el índice se vuelve una fila horizontal desplazable antes de la ficha. El formulario usa dos columnas de campos y se apila a una columna en móvil. El mapa conserva el iframe de Google Maps con una alternativa de dirección y enlace a Maps debajo; si el iframe no carga, esa alternativa sigue visible. La primera foto de Servicios se carga con prioridad alta y `loading="eager"`; las imágenes restantes usan carga diferida. El pie pasa de cuatro columnas a dos y luego a una.
 
 ## Elevation & Depth
 
-The system uses layered surfaces rather than hard outlines: a translucent dark navigation bar, restrained white cards, image overlays, and ambient shadows. Blur belongs to translucent surfaces or duplicated image backgrounds; the service photography itself stays contained and legible. Shadows describe separation and atmosphere, with stronger depth reserved for the service detail modal and floating contact action.
+El sistema combina capas tonales, blurmorfismo y sombras suaves. Las sombras separan la cápsula de navegación, las fotografías, las fichas y las acciones flotantes; no sustituyen el contraste de texto. La navegación gris neutra usa desenfoque de 30px; el panel de menú móvil usa una base clara translúcida (`rgba(238,243,248,.56)`) y desenfoque de 54px para que el contenido posterior siga perceptible, pero se lea claramente desenfocado. Los índices, etiquetas y controles flotantes usan desenfoque de 20–30px con contraste suficiente para mantener su lectura.
 
 ### Shadow Vocabulary
-- **Glass surface** (0 10px 30px rgba(0,0,0,0.02)): Very soft separation on shared glass cards.
-- **Service card at rest** (0 12px 35px rgba(22,43,68,0.06)): Ambient separation on white catalogue cards.
-- **Service detail dialog** (0 30px 100px rgba(0,0,0,0.35)): Stronger containment for the modal.
-
-### Named Rules
-**The Soft Separation Rule.** Keep default shadows diffuse and quiet; use pronounced depth only when an overlay or floating control must separate clearly from the page.
+- **Panel fotográfico** (`0 24px 70px rgba(13,43,73,.13)`): eleva la imagen principal y la ficha de servicio.
+- **Navegación difusa** (`0 18px 50px rgba(8,12,18,.3)`): separa la cápsula carbón del contenido con una sombra ambiental amplia.
+- **WhatsApp flotante** (`0 12px 32px rgba(12,31,24,.24)`): mantiene visible el acceso persistente.
+- **Ficha de misión y visión** (`0 20px 58px rgba(15,45,73,.08)`): separa los registros de propósito del lienzo.
 
 ## Shapes
 
-Actions use a full pill radius (980px on the shared primary button), while the navigation contact action uses a compact rounded rectangle (20px). Cards use broad corners (24–30px), fields use 16px corners, and gallery thumbnails use smaller 10px corners. Photo frames clip to the card shape. Borders are thin and low-contrast on light cards, with translucent white borders on dark or glass surfaces.
+Las superficies principales usan esquinas amplias: paneles de 36px, tarjetas de 28px, portada de Servicios de 42px y controles plenamente redondos. El bloque de propósito y el footer son las únicas superficies principales rectangulares; el bloque oscuro abarca de «¿Quiénes somos?» hasta Visión. Fotos y contenido se recortan dentro de paneles; la galería de Inicio usa marcos claros alrededor de las dos fotografías secundarias en escritorio, que se convierten en diapositivas amplias en móvil. El índice tiene su propio contenedor redondeado, y los botones y chips de navegación emplean forma de cápsula. Campos de formulario son redondeados pero no circulares.
+
+## Motion
+
+Los bloques de texto, fotografías y superficies aparecen al entrar en el área de lectura durante el scroll. Cada revelado usa opacidad y un desplazamiento vertical corto de 12–14px, con una duración de 460–540ms. La observación se hace una sola vez por elemento y no oculta contenido hasta que JavaScript inicializa el observador. Con `prefers-reduced-motion: reduce`, el revelado queda desactivado, las transiciones y animaciones se eliminan y el contenido permanece visible.
 
 ## Components
 
-### Primary Button
-- **Character:** Solid, technical, and direct.
-- **Shape:** Full pill (980px).
-- **Primary:** Technical blue background with white text; 14px by 28px padding and 600 weight.
-- **Hover / Focus:** Hover deepens the blue and scales to 1.03. Keyboard focus should remain visibly identifiable.
-
-### Navigation Contact Action
-- **Character:** Clear, high-contrast contact shortcut.
-- **Shape:** Rounded rectangle (20px).
-- **Primary:** White background, dark text, 8px by 16px padding; on mobile it grows to 12px by 32px.
-- **Hover:** Changes to a cool light gray and scales slightly.
+### Buttons
+- **Character:** acciones azules sólidas, cómodas y redondeadas.
+- **Shape:** cápsula (999px).
+- **Primary:** azul técnico, texto blanco, 14px 23px de padding y altura mínima de 52px.
+- **Hover / Focus:** azul profundo, leve elevación y anillo de foco visible de 3px.
+- **Navigation contact:** misma acción en formato compacto, altura mínima de 44px.
+- **Service link:** cápsula azul clara con texto azul profundo; se vuelve azul con texto blanco al pasar.
 
 ### Cards / Containers
-- **Corner Style:** Shared surfaces use 24px; catalogue cards use 26px.
-- **Background:** Shared glass cards use translucent white; mission content is charcoal and vision content is white. Service catalogue cards use solid white.
-- **Shadow Strategy:** Soft ambient shadows at rest, with a stronger shadow and small upward motion on service-card hover.
-- **Border:** Thin translucent or cool-gray outlines.
-- **Internal Padding:** General glass cards use 40px; service copy uses responsive padding around 24–38px.
+- **Corner Style:** panel amplio (36px) y tarjeta (28px); móvil reduce algunos paneles a 29–32px.
+- **Background:** blanco, papel azul pálido, blur claro o azul profundo según jerarquía; el bloque de propósito usa grafito con contenido claro.
+- **Shadow Strategy:** elevación ambiental; la ficha activa usa una sombra más marcada que los registros de propósito.
+- **Border:** líneas translúcidas suaves en navegación e índice; las fichas principales no llevan borde visible.
+- **Internal Padding:** controlado por `clamp`, con espacios de 25px a 72px según superficie y pantalla.
 
 ### Inputs / Fields
-- **Style:** Translucent white background, thin light border, 16px corners, and 15px by 20px padding.
-- **Focus:** Background becomes more opaque; the border turns technical blue and a subtle blue ring appears.
+- **Style:** fondo casi blanco, línea azul grisácea de 1px, esquinas de 18px, padding de 13px 16px y altura mínima de 52px; el mensaje usa 20px.
+- **Focus:** borde azul y halo suave de 4px.
+- **Disabled:** fondo gris azulado y texto auxiliar.
 
 ### Navigation
-- **Style:** Fixed dark translucent bar with a 20px backdrop blur and a fine lower border.
-- **Typography:** Light text with reduced opacity for inactive links; active and hovered links use full white opacity.
-- **Mobile:** A hamburger opens a full-screen near-black translucent menu with vertically spaced links.
+- **Style:** cápsula gris neutra translúcida pegada al inicio de la página con blur de 30px, texto claro y sombra ambiental.
+- **Typography:** Barlow 700; en el navbar carbón, la página actual y hover se identifican en azul claro. Dentro del menú móvil claro, usan azul técnico.
+- **Mobile:** botón circular de menú y panel gris claro translúcido debajo de la cápsula; el blur de 54px mantiene visibles las formas del contenido posterior, claramente desenfocadas. Los enlaces se apilan y la acción de contacto ocupa el ancho disponible.
 
-### Service Card
-- **Character:** Solid, technical frame for real service photography and concise information.
-- **Shape:** Rounded white card with a lightly defined border.
-- **Image:** Contain the source photograph over its blurred, darkened duplicate background.
-- **Hover / Focus:** Lift slightly with a stronger soft shadow; keyboard focus uses a blue outline.
+### Home Photo Collage
+- Tres fotografías publicadas de tamaños distintos forman una galería conectada a la derecha del texto. La foto principal lleva una leyenda de procedencia; las dos imágenes secundarias se solapan en diagonal. Un rótulo blurmórfico enlaza con el catálogo.
+- En móvil, el texto y la acción preceden una galería horizontal desplazable; cada imagen ocupa una diapositiva amplia con `scroll-snap-align: start`.
+
+### Service Index and Record
+- El índice selecciona una sola especialidad a la vez; teclado, flechas y Home/End permiten recorrerlo. En móvil, las opciones se desplazan horizontalmente.
+- La ficha activa combina fotografía, descripción publicada y enlace de consulta. Los controles circulares de galería muestran la posición y cambian las fotos manualmente.
+- Las cuatro fichas de plantilla muestran una nota de pendiente y no presentan enlace para cotizar.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** use the selected technical-blue and signal-red names and roles consistently.
-- **Do** use the project photographs as evidence of work and preserve their original aspect ratios in contained image frames.
-- **Do** keep service information clear and readable on light neutral surfaces.
-- **Do** use blur on a separate background layer so primary copy and photographs remain sharp.
-- **Do** keep primary actions pill-shaped and use rounded card and field shapes from the observed system.
+- **Do** mantener el nombre, datos de contacto, mapa, fotografías, especialidades y formulario publicados.
+- **Do** usar azul para acciones y estados; rojo para marca y verde para WhatsApp.
+- **Do** conservar las fotografías como superficies dominantes de Inicio y Servicios.
+- **Do** mantener visibles el foco de teclado y el movimiento reducido.
+- **Do** preservar las fichas pendientes como plantillas y no como servicios confirmados.
 
 ### Don't:
-- **Don't** invent client logos, testimonials, certifications, or project outcomes; use only evidence present in the project and confirmed by the user.
-- **Don't** spread the signal-red accent across every action; its current role is the home wordmark.
-- **Don't** apply blur or filters to the content-bearing text layer.
+- **Don't** volver a una navegación opaca, retículas de fichas cuadradas o radios pequeños como lenguaje de las superficies principales.
+- **Don't** inventar servicios, certificaciones, clientes, cifras, cobertura o resultados.
+- **Don't** extender «Precisión en obra» a una promesa de desempeño no confirmada.
+- **Don't** usar el rojo como color principal de acción ni el blur de modo que reduzca la legibilidad.

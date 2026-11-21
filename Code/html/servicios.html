@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConstruElectriseg | Servicios</title>
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/servicios.css">
-    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/registro.css">
 </head>
 <body>
 
     <header class="navbar">
         <div class="nav-container">
-            <a href="home.html" class="logo">CONSTRUELECTRISEG</a>
+            <a href="home.html" class="logo" aria-label="ConstruElectriseg, inicio">CONSTRU<span>ELECTRISEG</span></a>
             
-            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-controls="nav-links" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -22,40 +20,51 @@
 
             <nav class="nav-links" id="nav-links">
                 <a href="home.html">Inicio</a>
-                <a href="servicios.html" class="active">Servicios</a>
+                <a href="servicios.html" class="active" aria-current="page">Servicios</a>
                 <a href="home.html#contacto" class="btn-contacto">Contáctanos</a> 
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="page-header services-hero">
-            <!-- Animación agregada al título -->
-            <div class="container text-center fade-in-up">
-                <span class="services-kicker">CONSTRUELECTRISEG · SOLUCIONES INTEGRALES</span>
-                <h1>Hacemos realidad <span>cada proyecto.</span></h1>
-                <p class="subtitle">Soluciones especializadas en construcción, electricidad y seguridad, diseñadas para superar tus expectativas.</p>
-                <div class="services-hero-actions"><a href="#catalogo-servicios" class="btn-primary">Explorar servicios <span aria-hidden="true">↘</span></a><a class="services-quiet-link" href="home.html#contacto">Cuéntanos tu proyecto ↗</a></div>
+        <section class="services-hero">
+            <div class="container services-hero__sheet">
+                <div class="services-hero__copy">
+                    <h1>Hacemos realidad cada proyecto.</h1>
+                    <p>Soluciones especializadas en construcción, electricidad y seguridad, diseñadas para superar tus expectativas.</p>
+                </div>
+                <div class="services-hero__actions">
+                    <a href="#catalogo-servicios" class="btn-primary">Explorar servicios</a>
+                    <a class="quiet-link" href="home.html#contacto">Cuéntanos tu proyecto</a>
+                </div>
             </div>
         </section>
 
         <section class="services-section container" id="catalogo-servicios">
-            <div class="services-section-heading fade-in-up"><div><span class="services-eyebrow">NUESTRA EXPERIENCIA</span><h2>Soluciones hechas para ti<span class="services-dot">.</span></h2></div><p>Explora nuestros trabajos y descubre cómo podemos ayudarte en cada etapa.</p></div>
-            <div class="services-grid">
-<div class="glass-card service-card fade-in-up">
+            <header class="services-section-heading" data-reveal="copy">
+                <h2>Soluciones hechas para ti.</h2>
+                <p>Explora nuestros trabajos y descubre cómo podemos ayudarte en cada etapa.</p>
+            </header>
+            <div class="service-register">
+                <nav class="service-index" id="service-index" aria-label="Índice de servicios" data-reveal="surface">
+                    <h3>Índice de especialidades</h3>
+                    <div class="service-index__items" role="tablist" aria-orientation="vertical"></div>
+                </nav>
+                <div class="services-grid" id="service-record" aria-live="polite">
+<div class="service-card" data-reveal="photo" data-reveal-delay="80">
                     <div class="service-img-wrapper">
                         <div class="carousel-track">
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-01/serv1a.jpeg" alt="Imagen Construcción 1">
+                                <img src="../../Resource/images/servicios/servicio-01/serv1a.jpeg" alt="Levantamiento de observaciones técnicas por INDECI, fotografía 1" fetchpriority="high" loading="eager">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-01/serv1b.jpeg" alt="Imagen Construcción 2">
+                                <img src="../../Resource/images/servicios/servicio-01/serv1b.jpeg" alt="Levantamiento de observaciones técnicas por INDECI, fotografía 2" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-01/serv1c.jpeg" alt="Imagen Construcción 3">
+                                <img src="../../Resource/images/servicios/servicio-01/serv1c.jpeg" alt="Levantamiento de observaciones técnicas por INDECI, fotografía 3" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-01/serv1d.jpeg" alt="Imagen Construcción 4">
+                                <img src="../../Resource/images/servicios/servicio-01/serv1d.jpeg" alt="Levantamiento de observaciones técnicas por INDECI, fotografía 4" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -66,27 +75,27 @@
                             <li>Ejecución de Pozo a tierra</li>
                             <li>Mantenimiento y certificación industrial</li>
                         </ul>
-                        <a href="home.html#contacto" class="service-link">Cotizar servicio →</a>
+                        <a href="home.html#contacto" class="service-link">Cotizar servicio</a>
                     </div>
                 </div>
 
-<div class="glass-card service-card fade-in-up">
+<div class="service-card" data-reveal="photo" data-reveal-delay="80">
                     <div class="service-img-wrapper">
                         <div class="carousel-track">
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-02/ser2a.jpg" alt="Mantenimiento de tableros eléctricos, fotografía 1" loading="lazy">
+                                <img src="../../Resource/images/servicios/servicio-02/ser2a.jpg" alt="Mantenimiento de tableros eléctricos, fotografía 1" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-02/ser2b.jpg" alt="Mantenimiento de tableros eléctricos, fotografía 2" loading="lazy">
+                                <img src="../../Resource/images/servicios/servicio-02/ser2b.jpg" alt="Mantenimiento de tableros eléctricos, fotografía 2" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-02/ser2c.jpg" alt="Mantenimiento de tableros eléctricos, fotografía 3" loading="lazy">
+                                <img src="../../Resource/images/servicios/servicio-02/ser2c.jpg" alt="Mantenimiento de tableros eléctricos, fotografía 3" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-02/ser2d.jpg" alt="Mantenimiento de tableros eléctricos, fotografía 4" loading="lazy">
+                                <img src="../../Resource/images/servicios/servicio-02/ser2d.jpg" alt="Mantenimiento de tableros eléctricos, fotografía 4" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-02/ser2e.jpg" alt="Mantenimiento de tableros eléctricos, fotografía 5" loading="lazy">
+                                <img src="../../Resource/images/servicios/servicio-02/ser2e.jpg" alt="Mantenimiento de tableros eléctricos, fotografía 5" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -99,27 +108,27 @@
                             <li>Montaje, reparación y mantenimiento de motores eléctricos.</li>
                             <li>Automatización de maquinarias y procesos industriales.</li>
                         </ul>
-                        <a href="home.html#contacto" class="service-link">Cotizar servicio →</a>
+                        <a href="home.html#contacto" class="service-link">Cotizar servicio</a>
                     </div>
                 </div>
 
-<div class="glass-card service-card fade-in-up">
+<div class="service-card" data-reveal="photo" data-reveal-delay="80">
                     <div class="service-img-wrapper">
                         <div class="carousel-track">
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-03/serv03a.jpeg" alt="Imagen Acondicionamiento 1">
+                                <img src="../../Resource/images/servicios/servicio-03/serv03a.jpeg" alt="Acondicionamiento de oficinas, fotografía 1" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-03/serv03b.jpeg" alt="Imagen Acondicionamiento 2">
+                                <img src="../../Resource/images/servicios/servicio-03/serv03b.jpeg" alt="Acondicionamiento de oficinas, fotografía 2" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-03/serv03c.jpeg" alt="Imagen Acondicionamiento 3">
+                                <img src="../../Resource/images/servicios/servicio-03/serv03c.jpeg" alt="Acondicionamiento de oficinas, fotografía 3" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-03/serv03d.jpeg" alt="Imagen Acondicionamiento 4">
+                                <img src="../../Resource/images/servicios/servicio-03/serv03d.jpeg" alt="Acondicionamiento de oficinas, fotografía 4" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-03/serv03e.jpeg" alt="Imagen Acondicionamiento 5">
+                                <img src="../../Resource/images/servicios/servicio-03/serv03e.jpeg" alt="Acondicionamiento de oficinas, fotografía 5" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -133,30 +142,30 @@
                             <li>Divisiones de vidrio</li>
                             <li>Remodelaciones de oficinas</li>
                         </ul>
-                        <a href="home.html#contacto" class="service-link">Cotizar servicio →</a>
+                        <a href="home.html#contacto" class="service-link">Cotizar servicio</a>
                     </div>
                 </div>
 
-<div class="glass-card service-card fade-in-up">
+<div class="service-card" data-reveal="photo" data-reveal-delay="80">
                     <div class="service-img-wrapper">
                         <div class="carousel-track">
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-04/serv04_a.jpg" alt="Imagen Tableros de control 1">
+                                <img src="../../Resource/images/servicios/servicio-04/serv04_a.jpg" alt="Tableros de control y automatización industrial, fotografía 1" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-04/serv04_b.jpg" alt="Imagen Tableros de control 2">
+                                <img src="../../Resource/images/servicios/servicio-04/serv04_b.jpg" alt="Tableros de control y automatización industrial, fotografía 2" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-04/serv04_c.jpg" alt="Imagen Tableros de control 3">
+                                <img src="../../Resource/images/servicios/servicio-04/serv04_c.jpg" alt="Tableros de control y automatización industrial, fotografía 3" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-04/serv04_d.jpg" alt="Imagen Tableros de control 4">
+                                <img src="../../Resource/images/servicios/servicio-04/serv04_d.jpg" alt="Tableros de control y automatización industrial, fotografía 4" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-04/serv04_e.jpg" alt="Imagen Tableros de control 5">
+                                <img src="../../Resource/images/servicios/servicio-04/serv04_e.jpg" alt="Tableros de control y automatización industrial, fotografía 5" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-04/serv04_f.jpg" alt="Imagen Tableros de control 6">
+                                <img src="../../Resource/images/servicios/servicio-04/serv04_f.jpg" alt="Tableros de control y automatización industrial, fotografía 6" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -168,27 +177,27 @@
                             <li>⁠Automatización y control industrial</li>
                             <li>Mantenimiento y soporte técnico</li>
                         </ul>
-                        <a href="home.html#contacto" class="service-link">Cotizar servicio →</a>
+                        <a href="home.html#contacto" class="service-link">Cotizar servicio</a>
                     </div>
                 </div>
 
-<div class="glass-card service-card fade-in-up">
+<div class="service-card" data-reveal="photo" data-reveal-delay="80">
                     <div class="service-img-wrapper">
                         <div class="carousel-track">
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-05/serv05_a.jpeg" alt="Imagen Instalacion 1">
+                                <img src="../../Resource/images/servicios/servicio-05/serv05_a.jpeg" alt="Instalación y mantenimiento de cámaras de videovigilancia, fotografía 1" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-05/serv05_b.jpeg" alt="Imagen Instalacion 2">
+                                <img src="../../Resource/images/servicios/servicio-05/serv05_b.jpeg" alt="Instalación y mantenimiento de cámaras de videovigilancia, fotografía 2" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-05/serv05_c.jpeg" alt="Imagen Instalacion 3">
+                                <img src="../../Resource/images/servicios/servicio-05/serv05_c.jpeg" alt="Instalación y mantenimiento de cámaras de videovigilancia, fotografía 3" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-05/serv05_d.jpeg" alt="Imagen Instalacion 4">
+                                <img src="../../Resource/images/servicios/servicio-05/serv05_d.jpeg" alt="Instalación y mantenimiento de cámaras de videovigilancia, fotografía 4" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-05/serv05_e.jpeg" alt="Imagen Instalacion 5">
+                                <img src="../../Resource/images/servicios/servicio-05/serv05_e.jpeg" alt="Instalación y mantenimiento de cámaras de videovigilancia, fotografía 5" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -200,39 +209,39 @@
                             <li>Verificacion de conexiones</li>
                             <li>Pruebas de funcionamiento</li>
                         </ul>
-                        <a href="home.html#contacto" class="service-link">Cotizar servicio →</a>
+                        <a href="home.html#contacto" class="service-link">Cotizar servicio</a>
                     </div>
                 </div>
 
                 <!-- Servicio 06: redes de distribución eléctrica -->
-                <div class="glass-card service-card fade-in-up">
+<div class="service-card" data-reveal="photo" data-reveal-delay="80">
                     <div class="service-img-wrapper">
                         <div class="carousel-track">
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-06/serv06_a.jpg" alt="Redes de distribución eléctrica, fotografía 1" loading="lazy">
+                                <img src="../../Resource/images/servicios/servicio-06/serv06_a.jpg" alt="Redes de distribución eléctrica, fotografía 1" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-06/serv06_b.jpg" alt="Redes de distribución eléctrica, fotografía 2" loading="lazy">
+                                <img src="../../Resource/images/servicios/servicio-06/serv06_b.jpg" alt="Redes de distribución eléctrica, fotografía 2" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-06/serv06_c.jpg" alt="Redes de distribución eléctrica, fotografía 3" loading="lazy">
+                                <img src="../../Resource/images/servicios/servicio-06/serv06_c.jpg" alt="Redes de distribución eléctrica, fotografía 3" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-06/serv06_d.jpg" alt="Redes de distribución eléctrica, fotografía 4" loading="lazy">
+                                <img src="../../Resource/images/servicios/servicio-06/serv06_d.jpg" alt="Redes de distribución eléctrica, fotografía 4" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-06/serv06_e.jpg" alt="Redes de distribución eléctrica, fotografía 5" loading="lazy">
+                                <img src="../../Resource/images/servicios/servicio-06/serv06_e.jpg" alt="Redes de distribución eléctrica, fotografía 5" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-06/serv06_f.jpg" alt="Redes de distribución eléctrica, fotografía 6" loading="lazy">
+                                <img src="../../Resource/images/servicios/servicio-06/serv06_f.jpg" alt="Redes de distribución eléctrica, fotografía 6" loading="lazy" decoding="async">
                             </div>
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/servicio-06/serv06_g.jpeg" alt="Redes de distribución eléctrica, fotografía 7" loading="lazy">
+                                <img src="../../Resource/images/servicios/servicio-06/serv06_g.jpeg" alt="Redes de distribución eléctrica, fotografía 7" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
                     <div class="service-content">
-                        <h3>Proyectos en redes de distribución; baja y media tención</h3>
+                        <h3>Proyectos en redes de distribución; baja y media tensión</h3>
                         <ul>
                             <li>Instalacion de redes de distribución en baja y media tensión</li>
                             <li>Montaje de postes, luminarias LED y sistemas de alumbrado público</li>
@@ -241,16 +250,16 @@
                             <li>Mantenimiento preventivo y correctivo de redes eléctricas</li>
                             <li>Ejecución de proyectos electricos integrales</li>
                         </ul>
-                        <a href="home.html#contacto" class="service-link">Cotizar servicio →</a>
+                        <a href="home.html#contacto" class="service-link">Cotizar servicio</a>
                     </div>
                 </div>
 
                 <!-- Plantilla servicio 07: reemplaza el src, h3 y li; duplica .carousel-slide para añadir más fotos. -->
-                <div class="glass-card service-card fade-in-up">
+<div class="service-card" data-template="true" data-reveal="photo">
                     <div class="service-img-wrapper">
                         <div class="carousel-track">
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/plantilla.svg" alt="Imagen pendiente del servicio 7" loading="lazy">
+                                <img src="../../Resource/images/servicios/plantilla.svg" alt="Imagen pendiente del servicio 7" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -260,16 +269,16 @@
                             <li>Descripción o actividad principal</li>
                             <li>Otro detalle del servicio</li>
                         </ul>
-                        <a href="home.html#contacto" class="service-link">Cotizar servicio →</a>
+                        <a href="home.html#contacto" class="service-link">Cotizar servicio</a>
                     </div>
                 </div>
 
                 <!-- Plantilla servicio 08: reemplaza el src, h3 y li; duplica .carousel-slide para añadir más fotos. -->
-                <div class="glass-card service-card fade-in-up">
+<div class="service-card" data-template="true" data-reveal="photo">
                     <div class="service-img-wrapper">
                         <div class="carousel-track">
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/plantilla.svg" alt="Imagen pendiente del servicio 8" loading="lazy">
+                                <img src="../../Resource/images/servicios/plantilla.svg" alt="Imagen pendiente del servicio 8" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -279,16 +288,16 @@
                             <li>Descripción o actividad principal</li>
                             <li>Otro detalle del servicio</li>
                         </ul>
-                        <a href="home.html#contacto" class="service-link">Cotizar servicio →</a>
+                        <a href="home.html#contacto" class="service-link">Cotizar servicio</a>
                     </div>
                 </div>
 
                 <!-- Plantilla servicio 09: reemplaza el src, h3 y li; duplica .carousel-slide para añadir más fotos. -->
-                <div class="glass-card service-card fade-in-up">
+<div class="service-card" data-template="true" data-reveal="photo">
                     <div class="service-img-wrapper">
                         <div class="carousel-track">
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/plantilla.svg" alt="Imagen pendiente del servicio 9" loading="lazy">
+                                <img src="../../Resource/images/servicios/plantilla.svg" alt="Imagen pendiente del servicio 9" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -298,16 +307,16 @@
                             <li>Descripción o actividad principal</li>
                             <li>Otro detalle del servicio</li>
                         </ul>
-                        <a href="home.html#contacto" class="service-link">Cotizar servicio →</a>
+                        <a href="home.html#contacto" class="service-link">Cotizar servicio</a>
                     </div>
                 </div>
 
                 <!-- Plantilla servicio 10: reemplaza el src, h3 y li; duplica .carousel-slide para añadir más fotos. -->
-                <div class="glass-card service-card fade-in-up">
+<div class="service-card" data-template="true" data-reveal="photo">
                     <div class="service-img-wrapper">
                         <div class="carousel-track">
                             <div class="carousel-slide">
-                                <img src="../../Resource/images/servicios/plantilla.svg" alt="Imagen pendiente del servicio 10" loading="lazy">
+                                <img src="../../Resource/images/servicios/plantilla.svg" alt="Imagen pendiente del servicio 10" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -317,8 +326,9 @@
                             <li>Descripción o actividad principal</li>
                             <li>Otro detalle del servicio</li>
                         </ul>
-                        <a href="home.html#contacto" class="service-link">Cotizar servicio →</a>
+                        <a href="home.html#contacto" class="service-link">Cotizar servicio</a>
                     </div>
+                </div>
                 </div>
             </div>
 
@@ -326,20 +336,22 @@
 
 
 
-        <section class="cta-section container">
+        <section class="cta-section container" data-reveal="surface">
             <!-- Animación agregada a la tarjeta CTA -->
-            <div class="glass-card text-center cta-card fade-in-up">
-                <h2>¿Tienes un proyecto en mente?</h2>
-                <p>Nuestro equipo de expertos está listo para asesorarte sin compromiso.</p>
+            <div class="cta-card">
+                <div class="cta-copy">
+                    <h2>¿Tienes un proyecto en mente?</h2>
+                    <p>Nuestro equipo de expertos está listo para asesorarte sin compromiso.</p>
+                </div>
                 <a href="home.html#contacto" class="btn-primary">Hablemos de tu proyecto</a>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" data-reveal="surface">
         <div class="footer-content container">
             <div class="footer-col footer-brand">
-                <h3>CONSTRUELECTRISEG</h3>
+                <h3>CONSTRU<span class="text-red">ELECTRISEG</span></h3>
                 <p>Soluciones integrales de ingeniería, electricidad y construcción con los más altos estándares de calidad y seguridad.</p>
             </div>
             <div class="footer-col">
@@ -374,6 +386,6 @@
     <script src="../js/navbar.js"></script>
     <script src="../js/wspbtn.js"></script>
     <script src="../js/servicios.js"></script> 
-    <script src="../js/animaciones.js"></script>
+    <script src="../js/scroll-reveal.js"></script>
 </body>
 </html>
