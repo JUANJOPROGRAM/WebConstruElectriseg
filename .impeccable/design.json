@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T03:04:07Z",
+  "title": "Design System: ConstruElectriseg",
+  "extensions": {
+    "colorMeta": {
+      "technical-blue": {
+        "role": "primary",
+        "displayName": "Azul técnico",
+        "canonical": "#0066cc",
+        "tonalRamp": [
+          "#001A33",
+          "#002B57",
+          "#003D80",
+          "#0053AD",
+          "#0066CC",
+          "#3385D6",
+          "#70A5E2",
+          "#EEF6FF"
+        ]
+      },
+      "signal-red": {
+        "role": "secondary",
+        "displayName": "Rojo señal",
+        "canonical": "#ff0015",
+        "tonalRamp": [
+          "#330004",
+          "#66000A",
+          "#99000D",
+          "#CC0011",
+          "#FF0015",
+          "#FF3344",
+          "#FF7A84",
+          "#FFE5E7"
+        ]
+      },
+      "blue-hover": {
+        "role": "primary",
+        "displayName": "Azul de interacción",
+        "canonical": "#005bb5",
+        "tonalRamp": [
+          "#00172E",
+          "#00264A",
+          "#00366D",
+          "#004990",
+          "#005BB5",
+          "#337DC4",
+          "#70A0D5",
+          "#EEF6FF"
+        ]
+      },
+      "whatsapp-green": {
+        "role": "tertiary",
+        "displayName": "Verde WhatsApp",
+        "canonical": "#25d366",
+        "tonalRamp": [
+          "#062A14",
+          "#0D5428",
+          "#147E3D",
+          "#1BA852",
+          "#25D366",
+          "#51DC87",
+          "#8AE8AF",
+          "#E8FAEF"
+        ]
+      },
+      "light-canvas": {
+        "role": "neutral",
+        "displayName": "Lienzo casi blanco",
+        "canonical": "#fbfbfd",
+        "tonalRamp": [
+          "#232327",
+          "#414147",
+          "#606068",
+          "#808089",
+          "#A0A0A8",
+          "#C0C0C7",
+          "#E1E1E6",
+          "#FBFBFD"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta carbón",
+        "canonical": "#1d1d1f",
+        "tonalRamp": [
+          "#1D1D1F",
+          "#38383A",
+          "#535355",
+          "#6E6E70",
+          "#89898B",
+          "#A4A4A6",
+          "#C0C0C2",
+          "#F5F5F7"
+        ]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Tinta gris",
+        "canonical": "#86868b",
+        "tonalRamp": [
+          "#1F1F22",
+          "#353539",
+          "#4C4C51",
+          "#636368",
+          "#7A7A80",
+          "#919197",
+          "#A9A9AE",
+          "#F5F5F7"
+        ]
+      },
+      "paper-white": {
+        "role": "neutral",
+        "displayName": "Blanco papel",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#242424",
+          "#414141",
+          "#5E5E5E",
+          "#7B7B7B",
+          "#989898",
+          "#B6B6B6",
+          "#D3D3D3",
+          "#FFFFFF"
+        ]
+      },
+      "charcoal-surface": {
+        "role": "neutral",
+        "displayName": "Superficie carbón",
+        "canonical": "#161617",
+        "tonalRamp": [
+          "#161617",
+          "#303032",
+          "#4A4A4C",
+          "#646466",
+          "#7E7E80",
+          "#98989A",
+          "#B2B2B4",
+          "#F5F5F7"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home-page wordmark heading."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Responsive services page hero heading."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Service and explanatory copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Compact uppercase section and service eyebrows."
+      }
+    },
+    "shadows": [
+      {
+        "name": "glass-surface",
+        "value": "0 10px 30px rgba(0,0,0,0.02)",
+        "purpose": "Very soft separation on shared glass cards."
+      },
+      {
+        "name": "service-card-rest",
+        "value": "0 12px 35px rgba(22,43,68,0.06)",
+        "purpose": "Ambient depth on white catalogue cards."
+      },
+      {
+        "name": "service-detail-dialog",
+        "value": "0 30px 100px rgba(0,0,0,0.35)",
+        "purpose": "Containment for the service detail modal."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-confident",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Primary button, navigation, and card state transitions."
+      },
+      {
+        "name": "service-gallery",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "Service image carousel movement."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "768px"
+      },
+      {
+        "name": "tablet-max",
+        "value": "1050px"
+      },
+      {
+        "name": "desktop",
+        "value": "1051px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary service or enquiry action.",
+      "html": "<button class=\"ds-btn-primary\">Ver servicios</button>",
+      "css": ".ds-btn-primary { background: var(--accent-color); color: #fff; padding: 14px 28px; border: 0; border-radius: 980px; font: 600 1rem Inter, sans-serif; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: #005bb5; transform: scale(1.03); } .ds-btn-primary:focus-visible { outline: 3px solid #1d1d1f; outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation Contact Button",
+      "kind": "button",
+      "refersTo": "button-contact",
+      "description": "High-contrast contact shortcut inside the dark navigation.",
+      "html": "<a class=\"ds-btn-contact\" href=\"#\">Contáctanos</a>",
+      "css": ".ds-btn-contact { display: inline-block; padding: 8px 16px; border-radius: 20px; background: #fff; color: #1d1d1f; font: 600 0.9rem Inter, sans-serif; text-decoration: none; transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease; } .ds-btn-contact:hover { background: #e8e8ed; transform: scale(1.04); } .ds-btn-contact:focus-visible { outline: 3px solid #0066cc; outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "description": "Fixed dark translucent site navigation.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\">CONSTRUELECTRISEG</a><a href=\"#\">Servicios</a><a class=\"ds-btn-contact\" href=\"#\">Contáctanos</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 14px 20px; background: rgba(22, 22, 23, 0.8); color: #f5f5f7; border-bottom: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); } .ds-nav a { color: inherit; font: 400 0.88rem Inter, sans-serif; text-decoration: none; opacity: 0.75; transition: opacity 0.25s ease, color 0.25s ease; } .ds-nav a:hover, .ds-nav a:focus-visible { color: #fff; opacity: 1; } .ds-nav .ds-nav-brand { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; } .ds-nav .ds-btn-contact { opacity: 1; }"
+    },
+    {
+      "name": "Glass Card",
+      "kind": "card",
+      "description": "Shared content surface with translucent white fill and soft depth.",
+      "html": "<section class=\"ds-glass-card\"><h2>MISIÓN</h2><p>Texto de la sección.</p></section>",
+      "css": ".ds-glass-card { padding: 40px; border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 24px; background: rgba(255, 255, 255, 0.7); color: #1d1d1f; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); } .ds-glass-card h2 { margin: 0 0 15px; font: 700 2rem Inter, sans-serif; } .ds-glass-card p { margin: 0; color: #86868b; font: 400 1rem/1.6 Inter, sans-serif; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "custom",
+      "description": "White catalogue card for project photography and service information.",
+      "html": "<article class=\"ds-service-card\" tabindex=\"0\"><div class=\"ds-service-media\"></div><div class=\"ds-service-content\"><h3>Mantenimiento eléctrico</h3><p>Descripción del servicio.</p><a href=\"#\">Cotizar servicio →</a></div></article>",
+      "css": ".ds-service-card { overflow: hidden; border: 1px solid #e7ecf2; border-radius: 26px; background: #fff; color: #1d1d1f; box-shadow: 0 12px 35px rgba(22, 43, 68, 0.06); transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.45s, border-color 0.45s; } .ds-service-card:hover { transform: translateY(-7px); border-color: #c9dbed; box-shadow: 0 24px 55px rgba(22, 43, 68, 0.13); } .ds-service-card:focus-visible { outline: 3px solid #0066cc; outline-offset: 4px; } .ds-service-media { height: 255px; background: #21282d; } .ds-service-content { padding: 27px; } .ds-service-content h3 { margin: 0 0 15px; font: 700 1.45rem/1.25 Inter, sans-serif; } .ds-service-content p { color: #86868b; font: 400 0.9rem/1.55 Inter, sans-serif; } .ds-service-content a { color: #0066cc; text-decoration: none; } .ds-service-content a:hover { color: #005bb5; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "description": "Light form field with blue focus treatment.",
+      "html": "<label class=\"ds-field\"><span>Correo electrónico</span><input type=\"email\" placeholder=\"tucorreo@ejemplo.com\"></label>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 8px; color: #1d1d1f; font: 600 0.9rem Inter, sans-serif; } .ds-field input { width: 100%; padding: 15px 20px; border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 16px; background: rgba(255, 255, 255, 0.6); color: #1d1d1f; font: 400 1rem Inter, sans-serif; transition: all 0.3s ease; } .ds-field input:focus { border-color: #0066cc; background: rgba(255, 255, 255, 0.9); box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1); outline: none; } .ds-field input:focus-visible { outline: 2px solid #0066cc; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Precisión en obra",
+    "overview": "The visual system presents a technical, professional, contemporary engineering company. It pairs real project photography with clear service information, a light neutral content canvas, dark navigation, and blue action cues. The home hero uses a large project photograph with a dark overlay and a red wordmark accent. The services page uses a pale blue-white field, restrained geometric rings, and a practical catalogue of photographic cards.\n\nDepth stays restrained and atmospheric: translucent navigation and light card shadows create separation while keeping the work photographs and service copy prominent. Components should feel solid and technical, with readable labels and familiar actions. No visual anti-reference has been confirmed. Inter is the declared typeface; the home page imports it from Google Fonts, while the services page declares the same stack without loading that font itself, so it can fall back to a system sans-serif.",
+    "keyCharacteristics": [
+      "Technical blue identifies primary actions, links, and service accents.",
+      "Signal red is a focused accent in the home wordmark.",
+      "Project photography anchors the home hero and service catalogue.",
+      "Large, tightly tracked Inter headings pair with compact uppercase labels.",
+      "Soft blur and ambient shadows separate translucent or elevated layers.",
+      "Rounded pill actions sit alongside generously rounded cards and fields."
+    ],
+    "rules": [
+      {
+        "name": "The Blue for Action Rule",
+        "body": "Reserve blue for the primary action and technical links; keep the red accent concentrated in the wordmark as it is in the current home page.",
+        "section": "colors"
+      },
+      {
+        "name": "The Evidence First Rule",
+        "body": "Use bold display type for the company and page headings; keep detailed service descriptions at body scale so they remain easy to scan.",
+        "section": "typography"
+      },
+      {
+        "name": "The Soft Separation Rule",
+        "body": "Keep default shadows diffuse and quiet; use pronounced depth only when an overlay or floating control must separate clearly from the page.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** use the selected technical-blue and signal-red names and roles consistently.",
+      "**Do** use the project photographs as evidence of work and preserve their original aspect ratios in contained image frames.",
+      "**Do** keep service information clear and readable on light neutral surfaces.",
+      "**Do** use blur on a separate background layer so primary copy and photographs remain sharp.",
+      "**Do** keep primary actions pill-shaped and use rounded card and field shapes from the observed system."
+    ],
+    "donts": [
+      "**Don't** invent client logos, testimonials, certifications, or project outcomes; use only evidence present in the project and confirmed by the user.",
+      "**Don't** spread the signal-red accent across every action; its current role is the home wordmark.",
+      "**Don't** apply blur or filters to the content-bearing text layer."
+    ]
+  }
+}
