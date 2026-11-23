@@ -1,56 +1,39 @@
 ---
 name: ConstruElectriseg
-description: Sistema visual de Inicio y Servicios: evidencia real, navegación clara y contacto accesible.
+description: Sistema visual para presentar servicios, evidencia de obra y contacto de forma clara y contemporánea.
 ---
 
 # Sistema visual: ConstruElectriseg
 
 ## Dirección
 
-**Precisión en obra.** La interfaz presenta primero la especialidad, luego la evidencia fotográfica y finalmente la ruta para consultar. La voz visual es técnica, profesional y contemporánea. La composición usa ritmo tipográfico y encuadres reales para dar movimiento sin ornamentación gratuita.
+**Precisión en obra.** La web conecta la presentación de la empresa con evidencia fotográfica, un catálogo completo y una ruta clara de contacto. La voz es técnica, profesional y contemporánea; la fotografía real da contexto sin convertir la interfaz en un catálogo genérico.
 
-## Colores
+## Color y tipografía
 
-- **Azul técnico `#0066cc`:** acción principal, selección y foco.
-- **Azul profundo `#004f9f`:** interacción y enlaces sobre superficies claras.
-- **Rojo señal `#ff0015`:** nombre de marca; no compite con las acciones.
-- **Papel `#f4f5f4`, superficie `#ffffff`, tinta `#1d1d1f`:** lienzo, tarjetas y texto.
-- **Grafito `#2d2d2d`:** bloque rectangular continuo de Quiénes somos, Misión y Visión.
-- **Verde WhatsApp `#25d366`:** acceso de contacto.
+- Azul técnico `#0066cc` para acciones, enlaces activos y foco; azul profundo `#004f9f` para interacción sobre fondos claros.
+- Rojo señal `#ff0015` se reserva para el nombre de marca. WhatsApp conserva su verde `#25d366`.
+- Papel neutro `#f5f6f4`, blanco `#ffffff`, tinta `#181b1f` y gris carbón `#2d2d2d` para la sección de Quiénes somos, Misión y Visión.
+- La franja fija usa carbón `rgba(37,39,41,.86)` con blur. El menú móvil usa carbón translúcido con blur más intenso para desenfocar el contenido que queda detrás.
+- Onest es la tipografía principal, con Barlow local como respaldo. Titulares amplios y compactos; cuerpo legible con interlineado generoso.
 
-El nav es una franja fija de ancho completo, en gris carbón neutro translúcido con `backdrop-filter`; conserva la lectura sin flotar como cápsula. En teléfono, el panel hamburguesa intensifica el blur para desenfocar el contenido posterior al abrirse. Las superficies de contenido son sólidas; el desenfoque queda limitado al nav, menú móvil, controles sobre fotografía y mensajes flotantes.
+## Retícula y composición
 
-## Tipografía
+- Escritorio: retícula de 12 columnas, gutters de 24px y márgenes laterales de 80px; el contenido se limita a 1600px.
+- Móvil: retícula de 4 columnas y márgenes laterales de 24px; se mantienen gutters de 24px para proteger el ancho de lectura.
+- La barra de navegación es una franja fija de ancho completo. Inicio abre con titular y fotografía a dos columnas; después alterna bloques de lectura, propósito, ubicación y formulario.
+- Servicios abre con un hero fotográfico, una galería horizontal manual en orden aleatorio y fichas apiladas. El índice sticky acompaña el scroll y marca la ficha visible.
+- En contacto, el título centrado se sitúa encima del formulario para mantener una sola columna visual y evitar un vacío lateral; el formulario ocupa diez columnas en escritorio y el ancho completo en móvil.
+- Radios amplios se reservan para fotos, tarjetas y acciones. El footer mantiene bordes rectos a todo lo ancho.
 
-- **Onest:** única familia para títulos, lectura, navegación y controles; pesos 400–700.
-- Los titulares usan tamaño fluido, interlineado compacto y tracking negativo. El texto corrido mantiene escala cómoda e interlineado amplio.
-- Barlow permanece como fuente de respaldo local. Onest se carga desde Google Fonts.
+## Interacción y movimiento
 
-## Marco y superficies
-
-- Contenedor común de hasta 1360px con márgenes laterales fluidos.
-- Paneles y fotos principales: radio de 32px; controles y campos: 16px; acciones: cápsula.
-- Las fotografías publicadas son protagonistas, recortadas con `object-fit: cover` y sin inclinaciones.
-- Inicio: presentación de la empresa a la izquierda y galería jerarquizada a la derecha; en teléfono, contenido primero y galería después.
-- Servicios: portada fotográfica, índice de especialidades y ficha con galería y texto; en teléfono, índice horizontal y ficha apilada.
-- Contacto agrupa ubicación y formulario en dos paneles. El pie de página es rectangular.
-
-## Componentes y estados
-
-- Botón principal azul con etiqueta blanca; acción de contacto usa el mismo tratamiento.
-- Enlaces de navegación tienen subrayado de estado y actual. El menú móvil conserva una superficie oscura, redondeada y desenfocada al desplegarse.
-- El índice de servicios mantiene roles de pestaña, navegación con flechas y estado seleccionado.
-- Galerías: controles anterior/siguiente con etiqueta accesible, contador y transición de desplazamiento.
-- Campos: etiquetas visibles, borde neutro, fondo claro, foco azul y estado deshabilitado legible.
-- Todos los estados de foco son visibles; los controles táctiles conservan al menos 44px de alto.
-
-## Movimiento
-
-- La portada entra una vez con opacidad y desplazamiento corto.
-- El contenido marcado con `data-reveal` aparece una vez al entrar en pantalla, con opacidad y desplazamiento de 10–12px. Esta decisión conserva la preferencia de movimiento en scroll ya establecida para el proyecto.
-- Navegación, botones y galerías responden con transiciones cortas de opacidad, color y transform; no se animan medidas de layout.
-- `prefers-reduced-motion` elimina desplazamientos y deja todo el contenido visible.
+- En Inicio, titular, descripción y CTA se revelan al cargar con un único stagger vertical; la foto principal entra con un wipe horizontal. El hero de Servicios entra con un enfoque suave y sus textos aparecen en secuencia; las páginas usan una transición horizontal breve entre documentos donde View Transitions está disponible.
+- El menú hamburguesa anuncia su estado, cierra al elegir un enlace o pulsar Escape, y conserva el foco visible.
+- Los carruseles se controlan manualmente y no avanzan solos. Los controles de galería conservan nombres accesibles y contador.
+- El contenido entra al desplazarse con un movimiento corto; `prefers-reduced-motion` elimina el desplazamiento y deja todo visible.
+- El scrollspy es una navegación por anclas, no oculta fichas: las diez entradas siguen presentes y las cuatro plantillas se identifican como pendientes.
 
 ## Contenido que se conserva
 
-Las rutas, el texto publicado, el logotipo, el mapa, el formulario conectado a EmailJS, el número de WhatsApp, las fotos de `Resource/images`, las fichas publicadas y las plantillas pendientes no se reescriben.
+Se mantienen el logotipo, textos publicados, rutas, mapa, dirección, correo, teléfono, formulario y conexión EmailJS, enlaces de contacto, fotos de `Resource/images`, seis especialidades completas, las cuatro plantillas pendientes y la información legal del footer. No se inventan servicios ni datos comerciales.

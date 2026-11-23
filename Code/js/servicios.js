@@ -1,25 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
   const cards = Array.from(document.querySelectorAll('.service-card'));
-  const index = document.querySelector('#service-index');
-  const tablist = index?.querySelector('.service-index__items');
-  if (!cards.length || !index || !tablist) return;
+  const index = document.querySelector('#service-index .service-index__items');
+  const showcase = document.querySelector('#showcase-carousel');
+  const track = document.querySelector('#showcase-track');
+  if (!cards.length || !index) return;
 
-  const tabs = [];
-  let selected = 0;
+  const shuffle = items => {
+    const shuffled = items.slice();
+    for (let i = shuffled.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
 
-  function selectService(nextIndex, moveFocus) {
-    selected = nextIndex;
-    cards.forEach((card, cardIndex) => {
-      const active = cardIndex === selected;
-      card.hidden = !active;
-      tabs[cardIndex].setAttribute('aria-selected', String(active));
-      tabs[cardIndex].tabIndex = active ? 0 : -1;
-      tabs[cardIndex].classList.toggle('is-active', active);
+  const photos = cards.filter(card => card.dataset.template !== 'true')
+    .map(card => ({
+      title: card.querySelector('.service-content h3')?.textContent.trim() || 'Trabajo realizado',
+      image: card.querySelector('.carousel-slide img')
+    }))
+    .filter(item => item.image);
+
+  if (showcase && track && photos.length) {
+    shuffle(photos).forEach((photo, position) => {
+      const figure = document.createElement('figure');
+      figure.className = 'showcase-slide';
+      const image = photo.image.cloneNode(false);
+      image.loading = position < 2 ? 'eager' : 'lazy';
+      image.decoding = 'async';
+      image.alt = photo.image.alt.replace(/, fotografía 1$/i, '');
+      const caption = document.createElement('figcaption');
+      caption.textContent = photo.title;
+      figure.append(image, caption);
+      track.appendChild(figure);
     });
-    if (moveFocus) tabs[selected].focus();
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const step = direction => {
+      const slide = track.querySelector('.showcase-slide');
+      if (!slide) return;
+      track.scrollBy({ left: direction * (slide.getBoundingClientRect().width + 18), behavior: reducedMotion ? 'auto' : 'smooth' });
+    };
+    showcase.querySelector('.showcase-control--prev')?.addEventListener('click', () => step(-1));
+    showcase.querySelector('.showcase-control--next')?.addEventListener('click', () => step(1));
   }
 
-  function makeArrow(direction, title) {
+  const makeArrow = (direction, title) => {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'service-gallery-control service-gallery-control--' + direction;
@@ -28,43 +54,29 @@ document.addEventListener('DOMContentLoaded', () => {
       ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>'
       : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>';
     return button;
-  }
+  };
 
+  const navLinks = [];
   cards.forEach((card, cardIndex) => {
     const heading = card.querySelector('.service-content h3');
-    const title = heading?.textContent.trim() || 'Servicio';
+    const title = heading?.textContent.trim() || 'Servicio ' + (cardIndex + 1);
     const isTemplate = card.dataset.template === 'true';
-    const tab = document.createElement('button');
-    const cardId = 'service-record-' + (cardIndex + 1);
-    const tabId = 'service-tab-' + (cardIndex + 1);
-
-    tab.type = 'button';
-    tab.id = tabId;
-    tab.role = 'tab';
-    tab.setAttribute('aria-controls', cardId);
-    tab.setAttribute('aria-selected', String(cardIndex === 0));
-    tab.tabIndex = cardIndex === 0 ? 0 : -1;
-    tab.textContent = isTemplate ? 'Ficha de plantilla ' + String(cardIndex - 5).padStart(2, '0') : title;
-    if (isTemplate) tab.setAttribute('aria-label', 'Ficha de plantilla pendiente por completar, servicio ' + (cardIndex + 1));
-    tab.addEventListener('click', () => selectService(cardIndex, false));
-    tab.addEventListener('keydown', event => {
-      let next = selected;
-      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (selected + 1) % tabs.length;
-      else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (selected - 1 + tabs.length) % tabs.length;
-      else if (event.key === 'Home') next = 0;
-      else if (event.key === 'End') next = tabs.length - 1;
-      else return;
-      event.preventDefault();
-      selectService(next, true);
-    });
-    tabs.push(tab);
-    tablist.appendChild(tab);
-
+    const cardId = 'servicio-' + String(cardIndex + 1).padStart(2, '0');
     card.id = cardId;
-    card.setAttribute('role', 'tabpanel');
-    card.setAttribute('aria-labelledby', tabId);
-    card.tabIndex = 0;
-    card.hidden = cardIndex !== 0;
+    card.setAttribute('tabindex', '-1');
+
+    const link = document.createElement('a');
+    link.className = 'service-index__link';
+    link.href = '#' + cardId;
+    link.textContent = isTemplate ? 'Servicio pendiente ' + String(cardIndex - 5).padStart(2, '0') : title;
+    if (isTemplate) link.setAttribute('aria-label', 'Servicio ' + (cardIndex + 1) + ', ficha pendiente por completar');
+    link.addEventListener('click', () => {
+      navLinks.forEach(item => item.removeAttribute('aria-current'));
+      link.setAttribute('aria-current', 'location');
+    });
+    navLinks.push(link);
+    index.appendChild(link);
+    if (cardIndex === 0) link.setAttribute('aria-current', 'location');
 
     if (isTemplate) {
       card.classList.add('is-template');
@@ -76,9 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
       card.querySelector('.service-link')?.remove();
     }
 
+    const gallery = card.querySelector('.service-img-wrapper');
     const track = card.querySelector('.carousel-track');
     const slides = Array.from(card.querySelectorAll('.carousel-slide'));
-    if (!track || slides.length < 2) return;
+    if (!gallery || !track || slides.length < 2) return;
 
     const previous = makeArrow('prev', title);
     const next = makeArrow('next', title);
@@ -86,23 +99,31 @@ document.addEventListener('DOMContentLoaded', () => {
     count.className = 'service-gallery-count';
     count.setAttribute('role', 'status');
     count.setAttribute('aria-live', 'polite');
-    const gallery = card.querySelector('.service-img-wrapper');
     gallery.append(previous, next, count);
     let current = 0;
-
-    function showImage(nextIndex) {
+    const showImage = nextIndex => {
       current = (nextIndex + slides.length) % slides.length;
       track.style.transform = 'translateX(-' + current * 100 + '%)';
       slides.forEach((slide, slideIndex) => slide.setAttribute('aria-hidden', String(slideIndex !== current)));
       count.textContent = (current + 1) + ' / ' + slides.length;
-    }
-
+    };
     previous.addEventListener('click', () => showImage(current - 1));
     next.addEventListener('click', () => showImage(current + 1));
     track.setAttribute('aria-label', 'Fotografías de ' + title);
     showImage(0);
   });
 
-  index.classList.add('is-ready');
-  selectService(0, false);
+  if ('IntersectionObserver' in window) {
+    const activeSection = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(link => {
+          const active = link.hash === '#' + entry.target.id;
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-28% 0px -58% 0px', threshold: 0 });
+    cards.forEach(card => activeSection.observe(card));
+  }
 });

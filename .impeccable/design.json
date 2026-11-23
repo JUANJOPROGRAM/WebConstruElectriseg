@@ -1,437 +1,72 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-21T06:18:38Z",
+  "generatedAt": "2026-11-22T00:00:00Z",
   "title": "Design System: ConstruElectriseg",
   "extensions": {
     "colorMeta": {
-      "about-wash": {
-        "role": "neutral",
-        "displayName": "Grafito neutro de propósito",
-        "canonical": "#2d2d2d",
-        "tonalRamp": [
-          "#111111",
-          "#1c1c1c",
-          "#252525",
-          "#2d2d2d",
-          "#4b4b4b",
-          "#777777",
-          "#c9c9c9",
-          "#f4f4f4"
-        ]
-      },
-      "about-ink": {
-        "role": "neutral",
-        "displayName": "Texto claro de propósito",
-        "canonical": "#f4f4f4",
-        "tonalRamp": ["#202020", "#363636", "#4b4b4b", "#636363", "#818181", "#a6a6a6", "#c9c9c9", "#f4f4f4"]
-      },
-      "about-muted": {
-        "role": "neutral",
-        "displayName": "Texto secundario de propósito",
-        "canonical": "#c9c9c9",
-        "tonalRamp": ["#202020", "#363636", "#4b4b4b", "#636363", "#818181", "#a6a6a6", "#c9c9c9", "#f4f4f4"]
-      },
-      "nav-surface": {
-        "role": "neutral",
-        "displayName": "Gris humo de navegación",
-        "canonical": "rgba(67,67,67,.92)",
-        "tonalRamp": ["rgba(67,67,67,.15)", "rgba(67,67,67,.28)", "rgba(67,67,67,.4)", "rgba(67,67,67,.53)", "rgba(67,67,67,.66)", "rgba(67,67,67,.78)", "rgba(67,67,67,.88)", "rgba(67,67,67,.92)"]
-      },
-      "paper": {
-        "role": "neutral",
-        "displayName": "Papel azul pálido",
-        "canonical": "#f2f7fc",
-        "tonalRamp": [
-          "#101b27",
-          "#263544",
-          "#42566c",
-          "#70849a",
-          "#9eb0c1",
-          "#c8d5e1",
-          "#e2ebf3",
-          "#f2f7fc"
-        ]
-      },
-      "surface": {
-        "role": "neutral",
-        "displayName": "Superficie blanca",
-        "canonical": "#ffffff",
-        "tonalRamp": [
-          "#1b2630",
-          "#35414b",
-          "#56616b",
-          "#78828a",
-          "#9da5ac",
-          "#c1c7cc",
-          "#e4e7e9",
-          "#ffffff"
-        ]
-      },
-      "ink": {
-        "role": "neutral",
-        "displayName": "Tinta azul carbón",
-        "canonical": "#0c2035",
-        "tonalRamp": [
-          "#0c2035",
-          "#23374c",
-          "#405367",
-          "#607184",
-          "#8593a2",
-          "#aeb9c3",
-          "#d6dde3",
-          "#f2f7fc"
-        ]
-      },
-      "ink-soft": {
-        "role": "neutral",
-        "displayName": "Tinta suave",
-        "canonical": "#42566c",
-        "tonalRamp": [
-          "#15283a",
-          "#2c4054",
-          "#42566c",
-          "#65788b",
-          "#8999a8",
-          "#b0bdc8",
-          "#d8e0e7",
-          "#f2f7fc"
-        ]
-      },
-      "muted": {
-        "role": "neutral",
-        "displayName": "Tinta auxiliar",
-        "canonical": "#52667a",
-        "tonalRamp": [
-          "#1e2f40",
-          "#384b5f",
-          "#52667a",
-          "#748596",
-          "#98a6b3",
-          "#bac5ce",
-          "#dce3e9",
-          "#f2f7fc"
-        ]
-      },
-      "technical-blue": {
-        "role": "primary",
-        "displayName": "Azul técnico",
-        "canonical": "#0066cc",
-        "tonalRamp": [
-          "#00182e",
-          "#002e5c",
-          "#00468c",
-          "#005bb5",
-          "#0066cc",
-          "#3385d6",
-          "#80b3e6",
-          "#eaf4ff"
-        ]
-      },
-      "deep-blue": {
-        "role": "primary",
-        "displayName": "Azul profundo",
-        "canonical": "#064785",
-        "tonalRamp": [
-          "#03101c",
-          "#06233d",
-          "#064785",
-          "#27639b",
-          "#4a80b2",
-          "#7da4c5",
-          "#b8ccdd",
-          "#edf4fa"
-        ]
-      },
-      "light-blue": {
-        "role": "primary",
-        "displayName": "Azul claro",
-        "canonical": "#dceeff",
-        "tonalRamp": [
-          "#172330",
-          "#344454",
-          "#5a6d80",
-          "#8294a7",
-          "#aebdcb",
-          "#c7d9e9",
-          "#dceeff",
-          "#f5fbff"
-        ]
-      },
-      "signal-red": {
-        "role": "secondary",
-        "displayName": "Rojo señal",
-        "canonical": "#ff0015",
-        "tonalRamp": [
-          "#330004",
-          "#66000a",
-          "#99000d",
-          "#cc0011",
-          "#ff0015",
-          "#ff3344",
-          "#ff7a84",
-          "#ffe5e7"
-        ]
-      },
-      "brand-red": {
-        "role": "secondary",
-        "displayName": "Rojo de marca",
-        "canonical": "#c90012",
-        "tonalRamp": [
-          "#280004",
-          "#500009",
-          "#79000b",
-          "#a1000e",
-          "#c90012",
-          "#d63342",
-          "#e68088",
-          "#f8e5e7"
-        ]
-      },
-      "red-light": {
-        "role": "secondary",
-        "displayName": "Rojo claro",
-        "canonical": "#ff7580",
-        "tonalRamp": [
-          "#33171a",
-          "#662e33",
-          "#99464c",
-          "#cc5d66",
-          "#ff7580",
-          "#ff9199",
-          "#ffb9be",
-          "#fff0f1"
-        ]
-      },
-      "whatsapp-green": {
-        "role": "tertiary",
-        "displayName": "Verde WhatsApp",
-        "canonical": "#25d366",
-        "tonalRamp": [
-          "#062a14",
-          "#0d5428",
-          "#147e3d",
-          "#1ba852",
-          "#25d366",
-          "#51dc87",
-          "#8ae8af",
-          "#e8faef"
-        ]
-      },
-      "blur-light": {
-        "role": "neutral",
-        "displayName": "Blur claro",
-        "canonical": "rgba(237,242,248,.82)",
-        "tonalRamp": [
-          "rgba(237,242,248,.08)",
-          "rgba(237,242,248,.16)",
-          "rgba(237,242,248,.24)",
-          "rgba(237,242,248,.34)",
-          "rgba(237,242,248,.46)",
-          "rgba(237,242,248,.58)",
-          "rgba(237,242,248,.82)",
-          "rgba(237,242,248,.94)"
-        ]
-      },
-      "blur-dark": {
-        "role": "neutral",
-        "displayName": "Blur azul oscuro",
-        "canonical": "rgba(13,32,53,.78)",
-        "tonalRamp": [
-          "rgba(13,32,53,.96)",
-          "rgba(13,32,53,.9)",
-          "rgba(13,32,53,.84)",
-          "rgba(13,32,53,.78)",
-          "rgba(13,32,53,.62)",
-          "rgba(13,32,53,.46)",
-          "rgba(13,32,53,.3)",
-          "rgba(13,32,53,.14)"
-        ]
-      }
+      "technical-blue": { "role": "primary", "displayName": "Azul técnico", "canonical": "#0066cc" },
+      "deep-blue": { "role": "primary", "displayName": "Azul profundo", "canonical": "#004f9f" },
+      "signal-red": { "role": "secondary", "displayName": "Rojo señal", "canonical": "#ff0015" },
+      "paper": { "role": "neutral", "displayName": "Papel neutro", "canonical": "#f5f6f4" },
+      "surface": { "role": "neutral", "displayName": "Superficie", "canonical": "#ffffff" },
+      "ink": { "role": "neutral", "displayName": "Tinta", "canonical": "#181b1f" },
+      "graphite": { "role": "neutral", "displayName": "Grafito", "canonical": "#2d2d2d" },
+      "navigation-glass": { "role": "neutral", "displayName": "Vidrio carbón fijo", "canonical": "rgba(37,39,41,.86)" },
+      "whatsapp-green": { "role": "tertiary", "displayName": "Verde WhatsApp", "canonical": "#25d366" }
     },
     "typographyMeta": {
-      "display": {
-        "displayName": "Display",
-        "purpose": "Titular dominante de Inicio."
-      },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "Apertura de la página Servicios."
-      },
-      "title": {
-        "displayName": "Title",
-        "purpose": "Encabezados de sección."
-      },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Texto de lectura general, descripciones y formularios."
-      },
-      "label": {
-        "displayName": "Label",
-        "purpose": "Etiquetas del formulario y navegación del catálogo."
-      }
+      "display": { "displayName": "Display", "purpose": "Titular principal de Inicio y Servicios." },
+      "title": { "displayName": "Title", "purpose": "Encabezados de sección y fichas." },
+      "body": { "displayName": "Body", "purpose": "Lectura, descripciones y formulario." },
+      "label": { "displayName": "Label", "purpose": "Navegación, etiquetas y controles." }
     },
-    "shadows": [
-      {
-        "name": "soft-panel",
-        "value": "0 24px 70px rgba(13,43,73,.13)",
-        "purpose": "Elevación ambiental de fotografías y ficha activa."
-      },
-      {
-        "name": "blur-navigation",
-        "value": "0 18px 50px rgba(14,42,71,.12)",
-        "purpose": "Separación difusa de la navegación cápsula."
-      },
-      {
-        "name": "purpose-record",
-        "value": "0 20px 58px rgba(15,45,73,.08)",
-        "purpose": "Separación de los registros de misión y visión."
-      },
-      {
-        "name": "whatsapp-float",
-        "value": "0 12px 32px rgba(12,31,24,.24)",
-        "purpose": "Profundidad del acceso flotante a WhatsApp."
-      },
-      {
-        "name": "service-index-active",
-        "value": "0 9px 24px rgba(0,102,204,.2)",
-        "purpose": "Elevación del índice seleccionado."
-      }
-    ],
+    "layout": {
+      "desktopGrid": "12 columnas; gutter 24px; margen lateral 80px; ancho máximo 1600px",
+      "mobileGrid": "4 columnas; gutter 24px; margen lateral 24px",
+      "font": "Onest con Barlow local como respaldo",
+      "radii": "Fotos y paneles: 21–32px; controles: 16px; acciones: cápsula; footer recto"
+    },
     "motion": [
-      {
-        "name": "settle",
-        "value": "cubic-bezier(.16,1,.3,1)",
-        "purpose": "Revelado de portada, interacciones y transiciones de ficha."
-      },
-      {
-        "name": "gallery-slide",
-        "value": "cubic-bezier(.16,1,.3,1)",
-        "purpose": "Desplazamiento manual entre imágenes de servicio (650ms)."
-      },
-      {
-        "name": "scroll-reveal",
-        "value": "opacity 460ms + translateY(12–14px) 540ms",
-        "purpose": "Entrada breve de texto, fotos y superficies al entrar en el área de lectura."
-      },
-      {
-        "name": "reduced-motion",
-        "value": "prefers-reduced-motion: reduce",
-        "purpose": "Desactiva animaciones y transiciones; muestra el contenido sin movimiento."
-      }
+      { "name": "page-transition", "value": "horizontal, 220–420ms", "purpose": "Continuidad entre Home y Servicios." },
+      { "name": "manual-carousel", "value": "scroll-snap + smooth scroll", "purpose": "Recorrido controlado por el usuario de fotos publicadas." },
+      { "name": "hero-text-reveal", "value": "clip-path + opacity + translateY; 820ms; stagger 120ms", "purpose": "Revela título, descripción y acción del hero en una secuencia vertical." },
+      { "name": "hero-photo-wipe", "value": "clip-path + opacity + scale; 950ms", "purpose": "Revela la fotografía principal de izquierda a derecha." },
+      { "name": "services-hero-focus", "value": "blur + opacity + scale; 900ms; stagger 120ms", "purpose": "Revela el hero de Servicios con el copy en secuencia." },
+      { "name": "scroll-reveal", "value": "opacity + translateY(14px), 550–650ms", "purpose": "Revelado breve de secciones al entrar en pantalla." },
+      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "Retira movimiento y mantiene contenido visible." }
     ],
     "breakpoints": [
-      {
-        "name": "compact-logo",
-        "value": "390px"
-      },
-      {
-        "name": "mobile-layout",
-        "value": "760px"
-      },
-      {
-        "name": "tablet-layout",
-        "value": "1050px"
-      }
+      { "name": "mobile-layout", "value": "760px" },
+      { "name": "tablet-layout", "value": "1100px" }
     ]
   },
   "components": [
-    {
-      "name": "Primary Action",
-      "kind": "button",
-      "refersTo": "button-primary",
-      "description": "Acción principal azul para explorar servicios o enviar una consulta.",
-      "html": "<a class=\"ds-primary\" href=\"#\">Ver servicios</a>",
-      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:11px;min-height:52px;padding:14px 23px;border:1px solid transparent;border-radius:999px;background:#0066cc;color:#fff;font:700 1rem/1.2 Barlow,Arial,sans-serif;text-decoration:none;box-shadow:0 10px 25px rgba(0,102,204,.22);transition:background-color .28s ease,box-shadow .35s ease,transform .45s cubic-bezier(.16,1,.3,1)}.ds-primary:hover{background:#064785;box-shadow:0 15px 32px rgba(0,74,145,.28);transform:translateY(-2px)}.ds-primary:focus-visible{outline:3px solid #0066cc;outline-offset:4px}.ds-primary:active{transform:translateY(0)}"
-    },
-    {
-      "name": "Contact Navigation",
-      "kind": "button",
-      "refersTo": "button-contact",
-      "description": "Acción compacta de consulta en la navegación.",
-      "html": "<a class=\"ds-contact-action\" href=\"#\">Contáctanos</a>",
-      "css": ".ds-contact-action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 19px;border-radius:999px;background:#0066cc;color:#fff;font:700 1rem/1.2 Barlow,Arial,sans-serif;text-decoration:none;transition:background-color .28s ease,transform .35s cubic-bezier(.16,1,.3,1)}.ds-contact-action:hover{background:#064785;transform:translateY(-2px)}.ds-contact-action:focus-visible{outline:3px solid #0066cc;outline-offset:4px}"
-    },
-    {
-      "name": "Blur Navigation",
-      "kind": "nav",
-      "description": "Cápsula carbón translúcida, con marca, enlaces claros y acceso de contacto.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\">CONSTRU<span>ELECTRISEG</span></a><div class=\"ds-links\"><a class=\"ds-current\" href=\"#\">Inicio</a><a href=\"#\">Servicios</a><a class=\"ds-nav-action\" href=\"#\">Contáctanos</a></div></nav>",
-      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px;padding:10px 13px 10px 25px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(67,67,67,.92);backdrop-filter:blur(30px) saturate(1.04);box-shadow:0 18px 50px rgba(8,12,18,.3);font-family:Barlow,Arial,sans-serif}.ds-brand{color:#f4f4f4;font-size:1.12rem;font-weight:700;letter-spacing:.01em;text-decoration:none;white-space:nowrap}.ds-brand span{color:#ff7580}.ds-links{display:flex;align-items:center;gap:clamp(20px,3vw,42px)}.ds-links a:not(.ds-nav-action){padding:10px 0;color:rgba(244,244,244,.84);font-weight:700;text-decoration:none;transition:color .2s ease,transform .35s cubic-bezier(.16,1,.3,1)}.ds-links a:not(.ds-nav-action):hover,.ds-links .ds-current{color:#9ecbff}.ds-links a:not(.ds-nav-action):hover{transform:translateY(-1px)}.ds-nav-action{display:inline-flex;align-items:center;min-height:44px;padding:11px 19px;border-radius:999px;background:#0066cc;color:#fff;font-weight:700;text-decoration:none}.ds-nav-action:hover{background:#064785}.ds-nav a:focus-visible{outline:3px solid #0066cc;outline-offset:4px}@media(max-width:760px){.ds-nav{min-height:64px;padding:8px 9px 8px 19px}.ds-links{display:none}}"
-    },
-    {
-      "name": "Text Field",
-      "kind": "input",
-      "refersTo": "input-field",
-      "description": "Campo de formulario amplio con etiqueta, estado de foco y deshabilitado.",
-      "html": "<label class=\"ds-field\">Correo electrónico<input type=\"email\" placeholder=\"tucorreo@ejemplo.com\"></label>",
-      "css": ".ds-field{display:flex;flex-direction:column;gap:8px;color:#0c2035;font:700 .95rem/1.4 Barlow,Arial,sans-serif}.ds-field input{width:100%;min-height:52px;padding:13px 16px;border:1px solid #b8c9d8;border-radius:18px;background:#f7faff;color:#0c2035;font:400 1rem/1.4 Barlow,Arial,sans-serif;transition:border-color .2s ease,background-color .2s ease,box-shadow .25s ease}.ds-field input::placeholder{color:#52667a;opacity:1}.ds-field input:focus{border-color:#0066cc;outline:0;background:#fff;box-shadow:0 0 0 4px rgba(0,102,204,.13)}.ds-field input:disabled{background:#eaf0f5;color:#52667a;cursor:not-allowed}.ds-field:focus-within{outline:3px solid transparent}"
-    },
-    {
-      "name": "Home Photo Collage",
-      "kind": "custom",
-      "description": "Composición fotográfica conectada en escritorio; galería horizontal con ajuste por foto en móvil.",
-      "html": "<div class=\"ds-gallery\"><figure class=\"ds-photo ds-main\"><img src=\"\" alt=\"\"><figcaption>Fotografía publicada</figcaption></figure><figure class=\"ds-photo ds-detail-one\"><img src=\"\" alt=\"\"></figure><figure class=\"ds-photo ds-detail-two\"><img src=\"\" alt=\"\"></figure></div>",
-      "css": ".ds-gallery{position:relative;min-height:570px;isolation:isolate}.ds-photo{position:absolute;overflow:hidden;margin:0;border-radius:34px;background:#cbd9e6;box-shadow:0 24px 70px rgba(13,43,73,.13)}.ds-photo img{width:100%;height:100%;object-fit:cover}.ds-main{inset:8px 46px 78px 28px}.ds-detail-one{top:0;right:0;width:32%;height:27%;border:7px solid #f2f7fc;transform:rotate(2deg)}.ds-detail-two{bottom:0;left:0;width:35%;height:28%;border:7px solid #f2f7fc;transform:rotate(-2deg)}.ds-photo figcaption{position:absolute;top:18px;left:18px;max-width:240px;padding:10px 15px;border-radius:999px;background:rgba(13,32,53,.78);backdrop-filter:blur(24px);color:#fff;font:400 .84rem/1.4 Barlow,Arial,sans-serif}@media(max-width:760px){.ds-gallery{height:300px;min-height:300px;display:flex;gap:12px;overflow-x:auto;overflow-y:hidden;padding:0 3px 14px;scroll-snap-type:x mandatory}.ds-photo{position:relative;inset:auto;top:auto;right:auto;bottom:auto;left:auto;flex:0 0 72%;height:100%;transform:none!important;scroll-snap-align:start;border-radius:28px}.ds-main{flex-basis:88%}.ds-detail-one,.ds-detail-two{height:100%;border:5px solid #f2f7fc;border-radius:24px}.ds-detail-two{flex-basis:72%}}"
-    },
-    {
-      "name": "Service Index Item",
-      "kind": "custom",
-      "description": "Elemento de navegación seleccionable que activa una especialidad.",
-      "html": "<button class=\"ds-index-item\" type=\"button\" role=\"tab\" aria-selected=\"true\">Mantenimiento de tableros eléctricos</button>",
-      "css": ".ds-index-item{display:block;width:100%;padding:13px 15px;border:1px solid transparent;border-radius:19px;background:transparent;color:#42566c;text-align:left;font:700 .94rem/1.3 Barlow,Arial,sans-serif;cursor:pointer;transition:background-color .25s ease,color .25s ease,transform .4s cubic-bezier(.16,1,.3,1)}.ds-index-item:hover{background:rgba(0,102,204,.07);color:#064785;transform:translateX(3px)}.ds-index-item[aria-selected=true]{background:#0066cc;color:#fff;box-shadow:0 9px 24px rgba(0,102,204,.2)}.ds-index-item:focus-visible{outline:3px solid #0066cc;outline-offset:3px}@media(max-width:760px){.ds-index-item{width:max-content;max-width:250px;min-height:46px;padding:11px 15px;border-radius:999px;text-align:center}}"
-    },
-    {
-      "name": "Service Record",
-      "kind": "card",
-      "description": "Ficha activa de una especialidad publicada: galería fotográfica, contenido y consulta; las plantillas pendientes ocultan su enlace.",
-      "html": "<article class=\"ds-record\"><div class=\"ds-record-photo\"><img src=\"\" alt=\"Fotografía del servicio\"><button aria-label=\"Fotografía anterior\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m15 18-6-6 6-6\"/></svg></button><button aria-label=\"Fotografía siguiente\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"/></svg></button><span>1 / 4</span></div><div class=\"ds-record-copy\"><h3>Especialidad publicada</h3><ul><li>Detalle publicado por la empresa</li></ul><a href=\"#\">Cotizar servicio</a></div></article>",
-      "css": ".ds-record{display:grid;grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);min-height:560px;overflow:hidden;border-radius:36px;background:#fff;box-shadow:0 24px 70px rgba(13,43,73,.13);font-family:Barlow,Arial,sans-serif;color:#0c2035}.ds-record-photo{position:relative;min-height:560px;background:#d8e4ee}.ds-record-photo img{width:100%;height:100%;object-fit:cover}.ds-record-photo button{position:absolute;top:50%;display:grid;place-items:center;width:46px;height:46px;padding:0;border:1px solid rgba(255,255,255,.65);border-radius:50%;background:rgba(237,242,248,.86);backdrop-filter:blur(20px);cursor:pointer;transform:translateY(-50%);transition:background .2s ease,transform .25s ease}.ds-record-photo button:hover{background:#fff;transform:translateY(-50%) scale(1.07)}.ds-record-photo button:focus-visible,.ds-record-copy a:focus-visible{outline:3px solid #0066cc;outline-offset:4px}.ds-record-photo button:first-of-type{left:18px}.ds-record-photo button:last-of-type{right:18px}.ds-record-photo svg{width:20px;height:20px;fill:none;stroke:#0c2035;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.ds-record-photo span{position:absolute;right:18px;bottom:18px;padding:8px 13px;border:1px solid rgba(255,255,255,.55);border-radius:999px;background:rgba(13,32,53,.82);backdrop-filter:blur(22px);color:#fff;font-size:.85rem;font-variant-numeric:tabular-nums}.ds-record-copy{align-self:center;padding:clamp(28px,4vw,58px)}.ds-record-copy h3{margin:0 0 21px;font-size:clamp(1.65rem,2.5vw,2.55rem);line-height:1.04;letter-spacing:-.03em}.ds-record-copy ul{margin:0 0 27px;padding-left:1.15em;color:#42566c;font-size:1rem;line-height:1.62}.ds-record-copy li{margin-bottom:9px}.ds-record-copy li::marker{color:#0066cc}.ds-record-copy a{display:inline-flex;padding:13px 19px;border-radius:999px;background:#dceeff;color:#064785;font-weight:700;text-decoration:none;transition:background .25s ease,color .25s ease,transform .35s cubic-bezier(.16,1,.3,1)}.ds-record-copy a:hover{background:#0066cc;color:#fff;transform:translateY(-2px)}@media(max-width:1050px){.ds-record{grid-template-columns:1fr;min-height:0}.ds-record-photo{height:430px;min-height:0}}@media(max-width:760px){.ds-record{border-radius:29px}.ds-record-photo{height:320px}.ds-record-copy{padding:26px 22px}}"
-    },
-    {
-      "name": "WhatsApp Contact",
-      "kind": "button",
-      "description": "Acceso circular flotante para contacto por WhatsApp.",
-      "html": "<a class=\"ds-whatsapp\" href=\"#\" aria-label=\"Contacto por WhatsApp\"><span aria-hidden=\"true\">W</span></a>",
-      "css": ".ds-whatsapp{display:grid;place-items:center;width:60px;height:60px;border:1px solid rgba(255,255,255,.7);border-radius:50%;background:#25d366;color:#123a25;box-shadow:0 12px 32px rgba(12,31,24,.24);font:700 1rem Barlow,Arial,sans-serif;text-decoration:none;transition:opacity .24s ease,transform .45s cubic-bezier(.16,1,.3,1),box-shadow .25s ease}.ds-whatsapp:hover{box-shadow:0 17px 36px rgba(12,31,24,.3);transform:translateY(-3px)}.ds-whatsapp:focus-visible{outline:3px solid #0c2035;outline-offset:4px}.ds-whatsapp:active{transform:none}"
-    }
+    { "name": "Fixed glass navigation", "kind": "nav", "description": "Franja fija carbón con blur; menú móvil desenfocado y controlado por botón hamburguesa." },
+    { "name": "Home split hero", "kind": "section", "description": "Titular con reveal y fotografía real en columnas iguales." },
+    { "name": "Service carousel", "kind": "gallery", "description": "Orden aleatorio por carga, controles manuales y fotografías reales." },
+    { "name": "Service scrollspy", "kind": "nav", "description": "Índice sticky de anclas; indica el servicio en pantalla y conserva todas las fichas visibles." },
+    { "name": "Contact form", "kind": "form", "description": "Campos y conexión EmailJS existentes, con etiquetas y foco visible." },
+    { "name": "Footer", "kind": "footer", "description": "Información publicada completa, en superficie de bordes rectos." }
   ],
   "narrative": {
     "northStar": "Precisión en obra",
-    "overview": "La presencia visual convierte Inicio en una presentación editorial de la oferta: un titular amplio comparte protagonismo con fotografías publicadas en una composición conectada. Servicios continúa el recorrido con una portada fotográfica y un índice que cambia una ficha activa con imágenes y detalles. La información publicada y la evidencia visual siguen siendo el contenido central.\n\nLa voz permanece técnica, profesional y contemporánea. Barlow y los azules de marca mantienen el carácter reconocible; el bloque grafito neutro #2d2d2d reúne ¿Quiénes somos?, Misión y Visión con tarjetas blancas de evidencia. La navegación flotante usa gris humo translúcido y blur; el menú móvil usa un velo gris claro semitransparente que deja distinguir el contenido del fondo ya desenfocado.",
+    "overview": "Home y Servicios siguen una retícula de 12 columnas en escritorio y cuatro columnas en móvil. Una barra fija de vidrio carbón organiza el sitio. Inicio presenta la empresa, misión, visión, ubicación y formulario; el título de contacto va centrado sobre el formulario, que ocupa diez columnas en escritorio y cuatro en móvil. Servicios muestra fotografías en una galería manual y fichas navegables mediante scrollspy. La fotografía publicada y el contenido de empresa siguen al centro.",
     "keyCharacteristics": [
-      "Azul técnico para acciones, enlaces e índice seleccionado; rojo para el nombre de marca.",
-      "Fotografías publicadas en superficies amplias, redondeadas y conectadas.",
-      "Barlow de titulares grandes con texto de lectura sobrio.",
-      "Blurmorfismo sobrio: navegación gris neutra y menú móvil translúcido, con el fondo claramente desenfocado.",
-      "Un bloque grafito reúne ¿Quiénes somos?, Misión y Visión; las tarjetas blancas conservan su contraste.",
-      "El bloque de propósito y el footer mantienen siluetas rectas, sin esquinas redondeadas.",
-      "El catálogo conserva las especialidades publicadas y señala las fichas de plantilla."
-    ],
-    "rules": [
-      {
-        "name": "The Blue Leads Rule",
-        "body": "Usa azul para orientar acciones y estados; deja el rojo para el nombre de marca y el verde para WhatsApp.",
-        "section": "colors"
-      },
-      {
-        "name": "The Evidence First Rule",
-        "body": "Mantén los titulares dominantes y la descripción a escala legible, vinculada al contenido y a las fotografías publicadas.",
-        "section": "typography"
-      }
+      "Azul técnico para acciones, rojo señal para marca y verde para WhatsApp.",
+      "Grises neutros sin dominante azul y superficies sólidas para lectura.",
+      "Blur reservado a navegación, menú móvil y controles flotantes sobre fotos.",
+      "Ficha completa visible y cuatro plantillas claramente pendientes.",
+      "Transiciones discretas con soporte para movimiento reducido."
     ],
     "dos": [
-      "Do mantener el nombre, datos de contacto, mapa, fotografías, especialidades y formulario publicados.",
-      "Do usar azul para acciones y estados; rojo para marca y verde para WhatsApp.",
-      "Do conservar las fotografías como superficies dominantes de Inicio y Servicios.",
-      "Do mantener visibles el foco de teclado y el movimiento reducido.",
-      "Do preservar las fichas pendientes como plantillas y no como servicios confirmados."
+      "Conservar el texto, rutas, activos, formulario y datos publicados.",
+      "Mantener visibles todas las especialidades al usar el scrollspy.",
+      "Usar fotografías propias y controles accesibles."
     ],
     "donts": [
-      "Don't volver a una navegación de color claro ni a retículas de fichas cuadradas o radios pequeños como lenguaje de las superficies principales.",
-      "Don't inventar servicios, certificaciones, clientes, cifras, cobertura o resultados.",
-      "Don't extender «Precisión en obra» a una promesa de desempeño no confirmada.",
-      "Don't usar el rojo como color principal de acción ni el blur de modo que reduzca la legibilidad.",
-      "Don't redondear el footer."
+      "No ocultar servicios al seleccionar el índice.",
+      "No inventar las cuatro especialidades pendientes ni datos comerciales.",
+      "No redondear el footer ni automatizar el carrusel."
     ]
   }
 }

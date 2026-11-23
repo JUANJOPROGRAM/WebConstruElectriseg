@@ -12,7 +12,7 @@
 <body>
 
     <header class="navbar">
-        <div class="nav-container">
+        <div class="nav-container container">
             <a href="home.html" class="logo" aria-label="ConstruElectriseg, inicio">CONSTRU<span>ELECTRISEG</span></a>
             
             <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-controls="nav-links" aria-expanded="false">
@@ -22,7 +22,7 @@
             </button>
 
             <nav class="nav-links" id="nav-links">
-                <a href="home.html">Inicio</a>
+                <a href="home.html">Home</a>
                 <a href="servicios.html" class="active" aria-current="page">Servicios</a>
                 <a href="home.html#contacto" class="btn-contacto">Contáctanos</a> 
             </nav>
@@ -31,17 +31,26 @@
 
     <main>
         <section class="services-hero">
-            <div class="container services-hero__sheet">
-                <div class="services-hero__copy">
-                    <h1>Hacemos realidad cada proyecto.</h1>
-                    <p>Soluciones especializadas en construcción, electricidad y seguridad, diseñadas para superar tus expectativas.</p>
-                </div>
-                <div class="services-hero__actions">
-                    <a href="#catalogo-servicios" class="btn-primary">Explorar servicios</a>
-                    <a class="quiet-link" href="home.html#contacto">Cuéntanos tu proyecto</a>
-                </div>
+              <div class="container services-hero__sheet">
+                  <div class="services-hero__copy">
+                      <h1>Hacemos realidad cada proyecto.</h1>
+                      <p>Soluciones especializadas en construcción, electricidad y seguridad, diseñadas para superar tus expectativas.</p>
+                  </div>
+                  <div class="services-hero__actions">
+                      <a href="#catalogo-servicios" class="btn-primary">Explorar servicios</a>
+                      <a class="quiet-link" href="home.html#contacto">Cuéntanos tu proyecto</a>
+                  </div>
+              </div>
+          </section>
+
+        <section class="services-showcase container" aria-labelledby="showcase-title" data-reveal="photo">
+            <div class="services-showcase__heading"><p class="eyebrow">Trabajo en campo</p><h2 id="showcase-title">Experiencia que se ve.</h2></div>
+            <div class="showcase-carousel" id="showcase-carousel" aria-label="Galería de trabajos realizados">
+              <button class="showcase-control showcase-control--prev" type="button" aria-label="Fotografía anterior">←</button>
+              <div class="showcase-track" id="showcase-track" tabindex="0"></div>
+              <button class="showcase-control showcase-control--next" type="button" aria-label="Fotografía siguiente">→</button>
             </div>
-        </section>
+          </section>
 
         <section class="services-section container" id="catalogo-servicios">
             <header class="services-section-heading" data-reveal="copy">
@@ -51,9 +60,9 @@
             <div class="service-register">
                 <nav class="service-index" id="service-index" aria-label="Índice de servicios" data-reveal="surface">
                     <h3>Índice de especialidades</h3>
-                    <div class="service-index__items" role="tablist" aria-orientation="vertical"></div>
+                    <div class="service-index__items"></div>
                 </nav>
-                <div class="services-grid" id="service-record" aria-live="polite">
+                <div class="services-grid" id="service-record">
 <div class="service-card" data-reveal="photo" data-reveal-delay="80">
                     <div class="service-img-wrapper">
                         <div class="carousel-track">
@@ -359,7 +368,7 @@
             </div>
             <div class="footer-col">
                 <h4>Empresa</h4>
-                <a href="home.html">Inicio</a>
+                <a href="home.html">Home</a>
                 <a href="home.html#Quienes">Quiénes Somos</a>
             </div>
             <div class="footer-col">

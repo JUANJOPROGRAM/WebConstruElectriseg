@@ -1,7 +1,7 @@
 // Lógica para el Menú Hamburguesa Responsive
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
-const mobileMenu = window.matchMedia('(max-width: 768px)');
+const mobileMenu = window.matchMedia('(max-width: 760px)');
 
 function setMenuOpen(isOpen) {
     hamburger.classList.toggle('active', isOpen);
